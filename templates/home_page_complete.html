@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+<title>Home FromPara</title>
+
+{% block base_head %}
+    <link rel='stylesheet' href='{% static "css/main.css" %}'>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+	     
+	{% endblock %}
+    
+{% block content %}
+<style>
+    .circle-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150vh; /* Adjust the height as needed */
+    }
+    
+    .header-logo {
+        width: 100px; /* Adjust the size of the circle */
+        height: 100px; /* Adjust the size of the circle */
+        border-radius: 50%;
+        background-color: black;
+    }
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: left;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    
+    .anuncio-img {
+        width: 150%;
+        height: 250px;
+        height: 100%;
+        width: 450px;
+        object-fit: hidden; /* Mantém a proporção da imagem e cobre a área disponível */
+        border-radius: 5px; /* Adiciona bordas arredondadas */
+    }
+    
+    @media (min-width: 800px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    h1.fw-bolder {
+        font-family: 'UnifrakturCook', cursive;
+    }
+
+    /* Aplicando a fonte 'Podkova' ao elemento 'p' */
+    p.lead {
+        font-family: 'Playfair Display', serif;
+    }
+    
+</style>
+<header class=" text-black">
+	<div class="container px-4 text-center">
+		<h1 class="fw-bolder">Venha Conhecer FromPara</h1>
+		<p class="lead">Um Site para os interessados no estado do Para, sua cultura e pontos turisticos.
+            Fazemos diversas publicações divulgando pontos turisticos, bares, praias, balnearios e etc.
+            Lugares interessantes para se conhecer, e coisas legais para fazer.
+        </p>
+		
+		<img class="header-logo" src="{% static 'img/fromparatext2.jpg' %}" width="100" height="100" alt="Logo FromPara" />
+	</div>
+</header>
+
+    <div class="ui container">
+        <section class="four wide column">
+            <div class="ui vertical fluid menu menu-box">
+                {% for categoria in categorias %}
+                <a href="{% url 'categoria' categoria.id %}" class="item">
+                    {{ categoria }}
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+
+        <div class="divider">
+        
+        <section class="py-5 centered-text container">
+            <div class="row">
+                {% for anuncio in anuncios %}
+                <div class="col-md-6 mb-4">
+                    <div class="column">
+                        <div class="image">
+                            <div class="image-container">
+                                <img src="{{ anuncio.imagem.url }}" alt="Imagem do Anúncio" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="{% url 'anuncio' anuncio.id %}" class="header">{{ anuncio.titulo }}</a>
+                        </div>
+                        <div class="extra content">
+                            {{ anuncio.descricao }}
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p>Nenhum anúncio encontrado!</p>
+                {% endfor %}
+            </div>
+        </section>
+
+                
+        {% if request.user.is_authenticated %}
+            <div class="centered-text">
+                <h1>Premium</h1>
+                <p>{{ premium_content }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+</div>
+
+        																					
+            {% if request.user.is_authenticated %}
+                <div class="centered-text">
+                    <h1>Premium</h1>
+                    <p>{{ premium_content }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

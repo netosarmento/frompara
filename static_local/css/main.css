@@ -1,0 +1,75 @@
+.menu-box {
+  border: 1px solid #000; /* Borda preta */
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  float: left;
+  margin-right: 10px;
+  background: linear-gradient(to bottom, #ffffff 0%, #a9f080 100%); /* Gradiente de branco para verde */
+}
+
+.menu-box a {
+  display: block;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-box a:hover {
+  background-color: #ddd;
+}
+
+.column {
+  max-width: 100%; /* Adjust this value if needed */
+  width: 100%; /* Allows it to adjust to the image size */
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+.image-container {
+  max-width: 100%; /* Ajuste automático */
+  max-height: 300px;
+  overflow: hidden;
+  width: 450px; /* Largura desejada */
+}
+
+.image-container img {
+  width: 100%; /* Ocupa toda a largura do contêiner */
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+
+.header {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.extra.content {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+
+.centered-text {
+  text-align: center;
+  margin-top: 20px; /* Ajustar a margem conforme necessário */
+  font-family:'Comic Sans MS', cursive;/* Definir a fonte como Comic Sans */
+  color: #333; /* Cor do texto */
+  font-size: 18px; /* Tamanho do texto */
+  font-weight: bolder;
+  line-height: 1.5; /* Altura da linha para melhor legibilidade */
+}
+
+
+
+

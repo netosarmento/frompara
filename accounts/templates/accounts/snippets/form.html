@@ -1,0 +1,34 @@
+<form method='POST' action='{% if action_url %}{{ action_url }}{% else %}{% url "login" %}{% endif %}'> 
+  {% csrf_token %}
+  {% if next_url %}
+      <input type='hidden' name='next' value='{{ next_url }}' />
+  {% endif %}
+  
+  <div class="form-group">
+      <input type="email" name="email" class="form-control _ge_de_ol" placeholder="Enter Email" required="" aria-required="true">
+  </div>
+
+  <div class="form-group">
+      <input type="password" name="password" class="form-control _ge_de_ol" placeholder="Enter Password" required="" aria-required="true">
+  </div>
+
+  <div class="checkbox form-group">
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="remember_me">
+          <label class="form-check-label" for="remember_me">
+              Remember me
+          </label>
+      </div>
+      <a href="#">Forgot Password</a>
+  </div>
+
+  <div class="form-group">
+      <div class="_btn_04">
+          <button type="submit" class="btn btn-default">Login</button>
+      </div>
+  </div>
+
+  <div class="form-group nm_lk">
+      <p>Or Login With</p>
+  </div>
+</form>

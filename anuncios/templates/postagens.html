@@ -1,0 +1,352 @@
+{% load static %}
+{% url 'home' as home_url %}
+{% url 'contact' as contact_url %}
+{% url 'products:list' as products_list_url %}
+{% url 'login' as login_url %}
+{% url 'logout' as logout_url %}
+{% url 'register' as register_url %}
+{% url 'cart:home' as cart_url %}
+{% url 'faq' as faq_url %}
+
+<title>Postagens</title>
+
+{% block base_head %}
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postagens</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-7j4Vs7sv3b0yz8ihDf8vdcW03B9CZM6s4GCr4jn2t/huFB0JUpYVImyG6p9ViNtZKthGjqv8L6kFLVeFGsDDMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">    
+
+{% endblock %}
+    
+{% block content %}
+
+
+<header>
+<div class="div-2">
+   <div class="div-3">
+     <div class="div-4">
+       <img
+         loading="lazy"
+         src="https://cdn.builder.io/api/v1/image/assets/TEMP/eecb9f19c05d6b706e298f259601f5e2b559df8677d5a886595b8277738fbfb0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+         class="img"
+       />
+       <img
+         loading="lazy"
+         src="https://cdn.builder.io/api/v1/image/assets/TEMP/c773fca5f1332271a0dd892f5a25a16b2944403dd262e1659a90b19633b35391?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+         class="img-2"
+       />
+     </div>
+     <img
+       loading="lazy"
+       src="https://cdn.builder.io/api/v1/image/assets/TEMP/e110b4d826d45ce031ebe7b59b4a3fa7f1f462bb6aa3db5c58b0a6d3680f0b1c?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+       class="img-3"
+     />
+   </div>
+ </div>
+ <div class="div-5">
+   <div class="div-6">
+     <img
+       loading="lazy"
+       src="https://cdn.builder.io/api/v1/image/assets/TEMP/074456bea639d42f4c4b3c54f67f94de637bf6885646a8746812f992d6596353?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+       class="img-4"
+     />
+     <div class="div-7">
+       <div class="div-8 {% if request.path == home_url %}active{% endif %}">
+       <a href="{{ home_url }}" class="nav-link text-link px-2 text-body-secondary">Home</a></div>
+       <div class="div-9 {% if request.path == contact_url %} active {% endif %}">
+         <a href="{{ contact_url }}" class="nav-link text-link px-2 text-body-secondary">Contato</a></a></div>
+       <div class="div-10 {% if request.path == products_list_url %}active{% endif %}">
+         <a href="{{ products_list_url }}" class="nav-link text-link px-2 text-body-secondary">Produtos</a></div>
+     </div>
+     <div class="div-11">
+       <div class="div-12">
+         <img
+           loading="lazy"
+           src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab9afa3ed2f0946ea50b6a732f0e1bb23f6090735a7250dec0da612a5c8d3c57?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+           class="img-5"
+         />
+         <div class="div-13{% if request.path == cart_url %} active {% endif %}">
+           <a href="{{ cart_url }}" class="nav-link px-2 text-body-secondary no-underline">
+             <span class="navbar-cart-count">
+               {{ request.session.cart_items }}
+             </span>
+             <i class="fa fa-shopping-cart"></i>Carrinho
+           </a>
+         </div>
+         <div class="div-14">
+           {% if request.user.is_authenticated %}
+             <div class="div-26 {% if request.path == logout_url %}active{% endif %}">
+               <a href="{{ logout_url }}" class="nav-link px-2 text-body-secondary no-underline">Logout</a>
+             </div>
+           {% else %}
+             <div class="div-27 {% if request.path == login_url %}active{% endif %}">
+               <a href="{{ login_url }}?next={{ request.path }}" class="nav-link px-2 text-body-secondary no-underline">Login</a>
+             </div>
+             <div class="div-28 {% if request.path == register_url %}active{% endif %}">
+               <a href="{{ register_url }}" class="nav-link px-2 text-body-secondary no-underline">Registrar-se</a>
+             </div>
+           {% endif %}
+         </div>
+             
+         <div class="div-17">
+          <form method="GET" action="{% url 'search:query' %}" class="form my-2 my-lg-0 search-form">
+            <div class="input-group">
+              <input class="form-control" type="search" placeholder="Pesquisar" name="q" aria-label="Search" value="{{ request.GET.q }}">
+              <span class="input-group-btn">
+                
+              </span>
+            </div>
+          </form>
+        </div>
+   <div class="div-18">Conhecer o Pará</div>
+       </header>      
+       <body>
+   <div class="div-19">
+     <div class="div-20">
+       <img
+         loading="lazy"
+         src="https://cdn.builder.io/api/v1/image/assets/TEMP/87b2ef4419242ac8fd9b6fcd29ea74c4cc867f9ed623ee172d700a81903345b2?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+         class="img-6"
+       />
+       <div class="div-21">
+        <a href="http://3.144.18.56:8000/categoria/1/" class="nav-link px-2 text-body-secondary no-underline"> Bares &
+         <br />
+         Restaurantes</a>
+       </div>
+     </div>
+     <div class="div-22">
+       <img
+         loading="lazy"
+         src="https://cdn.builder.io/api/v1/image/assets/TEMP/3881496d74507f609d9dd5ec34dec6f94dccdb3de73e76f910f75fa0251f59f4?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+         class="img-7"
+       />
+       <div class="div-23"><a href="http://3.144.18.56:8000/categoria/3/" class="nav-link text-link px-2 text-body-secondary">Cidades</a></div>
+     </div>
+     <div class="div-24">
+       <img
+         loading="lazy"
+         src="https://cdn.builder.io/api/v1/image/assets/TEMP/767e2a1e072a7bd6186e836136e4cc5527d38faa655bdb581ff142346c42be5d?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+         class="img-8"
+       />
+       <div class="div-25"><a href="http://3.144.18.56:8000/categoria/6/" class="nav-link text-link px-2 text-body-secondary">LGBT+</a></div>
+     </div>
+     <div class="div-26">
+       <img
+         loading="lazy"
+         src="https://cdn.builder.io/api/v1/image/assets/TEMP/f9b48edaf0205effa2ecdc75909e36a69a927d6c7a499779a11d7fc3af7ffa4c?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+         class="img-9"
+       />
+       <div class="div-27"><a href="http://3.144.18.56:8000/categoria/5/" class="nav-link text-link px-2 text-body-secondary">Praias</a></div>
+     </div>
+
+     <div class="div-28">
+       <img
+         loading="lazy"
+         src="https://cdn.builder.io/api/v1/image/assets/TEMP/ce7fbebb89dec607f8971af8f258461c36df88eed8246d3db857164b3055c530?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+         class="img-10"
+       />
+       <div class="div-29"><a href="http://3.144.18.56:8000/categoria/4/" class="nav-link text-link px-2 text-body-secondary">
+         Pontos
+         <br />
+         Turísticos
+       </a></div>
+     </div>
+   </div>
+ 
+   <div class="carousel-container">
+    <input type="radio" name="carousel" id="carousel1" checked>
+    <input type="radio" name="carousel" id="carousel2">
+    <input type="radio" name="carousel" id="carousel3">
+  
+    <div class="carousel-slides">
+      <div class="slide">
+        <img
+          loading="lazy"
+          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+          class="img-11"
+        />
+        <div class="div-31">
+          <div class="div-32">Rio Tapajós</div>
+          <div class="div-33">
+            Santarém e Alter do Chão são algumas das cidades banhadas
+            <br />
+            por esse rio com atrações naturais imperdíveis
+          </div>
+        </div>
+      </div>
+  
+      <div class="slide">
+        <img src='{% static "img/logoplaca.jpg" %}' class="img-11">
+        <div class="div-31">
+          <div class="div-32">Logoplaca Ilustrativa</div>
+          <div class="div-33">Descrição do Logoplaca muito legal</div>
+        </div>
+      </div>
+  
+      <div class="slide">
+        <img src='{% static "img/frompara.png" %}' class="img-11">
+        <div class="div-31">
+          <div class="div-32">FromPara</div>
+          <div class="div-33">Descrição do FromPara nova imagem ilustrativa</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="carousel-navigation">
+      <label class="carousel-dot" for="carousel1"></label>
+      <label class="carousel-dot" for="carousel2"></label>
+      <label class="carousel-dot" for="carousel3"></label>
+    </div>
+  </div>
+  
+
+
+    <div class="div-38">Pra quem quer se divertir gastando pouco</div>
+    <div class="div-39">Rolês até 50 reais</div>
+    
+    <div class="div-40">
+      {% for anuncio in anuncios|slice:"6" %}
+        <div class="div-41">
+          <img
+            loading="lazy"
+            srcset="{{ anuncio.imagem.url }}?width=100 100w, {{ anuncio.imagem.url }}?width=200 200w, {{ anuncio.imagem.url }}?width=400 400w, {{ anuncio.imagem.url }}?width=800 800w, {{ anuncio.imagem.url }}?width=1200 1200w, {{ anuncio.imagem.url }}?width=1600 1600w, {{ anuncio.imagem.url }}?width=2000 2000w, {{ anuncio.imagem.url }}"
+            class="img-13"
+          />
+          <div class="div-42">{{ anuncio.titulo }}</div>
+          <div class="div-43">{{ anuncio.descricao }}</div>
+          <div class="div-44">#conhecernorte #Para #FromPara</div>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <img
+      loading="lazy"
+      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+      class="img-20"
+    />
+    
+    
+    
+    
+      
+    
+    
+
+
+      
+  </div>
+  <div class="div-68">
+    <div class="div-69">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/03253481bf26a49d94fdda2e75823a0735071364f8f3fac2d33ed390009ed1db?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+        class="img-29"
+      />
+    <!-- jQuery and Bootstrap Bundle with Popper -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+5RA4g1EppNK5Rx8+2qc1OwH/CmAKjdj3HPt/msVJ6+oZfo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.bundle.min.js" integrity="sha384-2V4UEh3wQQh5kN5Ta0nqGvFYzKwrZy+G9DH1McyjUavvKkTKxXq7rpqNT8K5l+Co" crossorigin="anonymous"></script>
+  
+<!-- Custom JavaScript -->
+<script>
+  // Função para mudar os slides automaticamente a cada 5 segundos
+  function carousel() {
+    const slides = document.querySelectorAll('.carousel-slides .slide');
+    const radios = document.querySelectorAll('[name="carousel"]');
+
+    let currentSlide = 0;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      radios[currentSlide].checked = false;
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.add('active');
+      radios[currentSlide].checked = true;
+    }
+
+    // Iniciar o carousel
+    nextSlide();
+
+    // Trocar de slide a cada 5 segundos
+    setInterval(nextSlide, 5000);
+  }
+
+  // Chamar a função para iniciar o carousel quando o documento estiver pronto
+  document.addEventListener('DOMContentLoaded', carousel);
+</script>
+    </body>
+
+      <footer>
+      
+      <div class="div-70">
+        <div class="div-71">
+          <div class="column">
+            <div class="div-72">
+              <a href="URL_DO_QUEM_SOMOS" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Quem somos</a>
+              <br />
+              <br />
+              <a href="{{ faq_url }}" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">FAQ's</a>
+              <br />
+              <br />
+              <a href="URL_DO_CEO" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">CEO</a>
+              <br />
+              <br />
+              <a href="URL_DAS_CARREIRAS" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Carreiras</a>
+              <br />
+              <br />
+              <a href="URL_DO_FALE_CONOSCO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Fale conosco</a>
+              <br />
+              <br />
+              <a href="URL_DOS_TERMOS_DE_USO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Termos de Uso</a>
+            </div>
+          </div>
+          <div class="column-2">
+            <div class="div-73">
+              <a href="http://3.144.18.56:8000/categoria/1/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Bares e Restaurantes</a>
+              <br />
+              <br />
+              <a href="http://3.144.18.56:8000/categoria/3/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Cidades</a>
+              <br />
+              <br />
+              <a href="http://3.144.18.56:8000/categoria/5/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Praias</a>
+              <br />
+              <br />
+              <a href="http://3.144.18.56:8000/categoria/6/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">LGBTQI+</a>
+              <br />
+              <br />
+              <a href="http://3.144.18.56:8000/categoria/4/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Pontos Turísticos</a>
+            </div>
+          </div>
+          <div class="column-3">
+            <div class="div-74">
+              <a href="URL_SEJA_UM_PARCEIRO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Seja um parceiro</a>
+              <br />
+              <br />
+              <a href="URL_FACA_UMA_AVALIACAO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Faça uma avaliação</a>
+              <br />
+              <br />
+              <a href="URL_PERFIL_PROPRIETARIO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Perfil de Proprietário</a>
+              <br />
+              <br />
+              <a href="URL_CRIE_UM_LUGAR" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Crie um lugar</a>
+              <br />
+              <br />
+              <a href="URL_REINVIDIQUE_UM_LUGAR" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Reivindique um lugar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-75" style="color: white; font: 700 16px 'Roboto', sans-serif;">© 2024 FromPara Todos os direitos reservados.</div>
+    </footer>
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGz7P+yW6p4yfRvH+S2mXqUANdf4B6mL6pC7/kDA6j6gD" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-PPSwE0P3mOJLzBf0q9/8Ni/25YgpgyVrWBDzEGHcuVCXJlZKX0t1H0HvZpe70dd" crossorigin="anonymous"></script>
