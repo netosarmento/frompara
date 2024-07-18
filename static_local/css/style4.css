@@ -499,8 +499,20 @@
     .div-42 {
       margin-top: 18px;
       font: 700 20px Roboto, sans-serif;
-    }
-    
+      }
+    .text-link {
+        text-decoration: none;
+        color: inherit; /* Mantém a cor do texto */
+        cursor: pointer; /* Adiciona o cursor de link ao passar o mouse */
+      } 
+      
+    .text-link:hover,
+    .text-link:focus,
+    .text-link:active {
+        text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+      }
+      
+
     .div-43 {
       margin-top: 8px;
       font: 15px Roboto, sans-serif;
