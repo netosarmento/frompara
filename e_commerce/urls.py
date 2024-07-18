@@ -11,7 +11,8 @@ from addresses.views import checkout_address_create_view, checkout_address_reuse
 from .views import (home_page,  
                     about_page, 
                     contact_page,
-                    faq
+                    faq,
+                    quemsomos
 )
 
 urlpatterns = [
@@ -32,6 +33,7 @@ urlpatterns = [
     path('', include('anuncios.urls')),
     path('admin/', admin.site.urls),
     path('faq', faq, name='faq'),
+    path('quemsomos', quemsomos, name='quemsomos'),
 ]
 
 if settings.DEBUG:

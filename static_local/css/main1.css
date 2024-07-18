@@ -1,3 +1,17 @@
+/* Para telas pequenas (smartphones) */
+@media only screen and (max-width: 320px) {
+  /* Estilos para telas pequenas */
+}
+
+/* Para telas médias (tablets) */
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  /* Estilos para telas médias */
+}
+
+/* Para telas grandes (desktops) */
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+  /* Estilos para telas grandes */
+}
 
   .div {
     background-color: var(--sds-color-background-default-default);
@@ -692,101 +706,53 @@
     width: 30px;
     margin: auto 0;
   }
-  .div-48 {
+ 
+  .div-48, .div-52, .div-56 {
     display: flex;
     flex-direction: column;
   }
-  .img-19 {
+  
+  .img-19, .img-21, .img-23 {
     aspect-ratio: 1.27;
     object-fit: auto;
     object-position: center;
     width: 100%;
+    border-radius: 10px; /* Borda arredondada */
   }
-  .div-49 {
+  
+  .div-49, .div-53, .div-57 {
     margin-top: 18px;
     font: 700 20px Roboto, sans-serif;
   }
-  .img-20 {
+  
+  .img-20, .img-22, .img-24 {
     aspect-ratio: 5.88;
     object-fit: auto;
     object-position: center;
     width: 82px;
     margin-top: 9px;
+    border-radius: 10px; /* Borda arredondada */
   }
-  .div-50 {
+  
+  .div-50, .div-54, .div-58 {
     margin-top: 8px;
     font: 15px Roboto, sans-serif;
   }
-  .div-51 {
+  
+  .div-51, .div-55, .div-59 {
     color: #1e64eb;
     margin-top: 10px;
     font: 10px Roboto, sans-serif;
   }
-  .div-52 {
-    display: flex;
-    flex-direction: column;
-  }
-  .img-21 {
-    aspect-ratio: 1.27;
-    object-fit: auto;
-    object-position: center;
-    width: 100%;
-  }
-  .div-53 {
-    margin-top: 18px;
-    font: 700 20px Roboto, sans-serif;
-  }
-  .img-22 {
-    aspect-ratio: 5.88;
-    object-fit: auto;
-    object-position: center;
-    width: 82px;
-    margin-top: 5px;
-  }
-  .div-54 {
-    margin-top: 8px;
-    font: 15px Roboto, sans-serif;
-  }
-  .div-55 {
-    color: #1e64eb;
-    margin-top: 10px;
-    font: 10px Roboto, sans-serif;
-  }
-  .div-56 {
-    display: flex;
-    flex-direction: column;
-  }
-  .img-23 {
-    aspect-ratio: 1.27;
-    object-fit: auto;
-    object-position: center;
-    width: 100%;
-  }
-  .div-57 {
-    margin-top: 15px;
-    font: 700 20px Roboto, sans-serif;
-  }
-  .img-24 {
-    aspect-ratio: 5.88;
-    object-fit: auto;
-    object-position: center;
-    width: 82px;
-    margin-top: 9px;
-  }
-  .div-58 {
-    margin-top: 8px;
-    font: 15px Roboto, sans-serif;
-  }
+  
   @media (max-width: 991px) {
     .div-58 {
       margin-right: 10px;
     }
   }
-  .div-59 {
-    color: #1e64eb;
-    margin-top: 10px;
-    font: 10px Roboto, sans-serif;
-  }
+  
+
+
   .img-25 {
     aspect-ratio: 1.49;
     object-fit: auto;

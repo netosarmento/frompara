@@ -7,8 +7,9 @@
 {% url 'register' as register_url %}
 {% url 'cart:home' as cart_url %}
 {% url 'faq' as faq_url %}
+{% url 'quemsomos' as quemsomos_url %}
 <title>Home FromPara</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+
 {% block base_head %}
     <link rel='stylesheet' href='{% static "css/main1.css" %}'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    	     
@@ -109,7 +110,7 @@
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/204eddc8ab49cfdb605f783daadf9b1d307a401b128d6747faeb81b33ff75795?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
               class="img-8"
             />
-            <div class="div-21"><a href="http://3.144.18.56:8000/categoria/6/" class="nav-link text-link px-2 text-body-secondary">LGBT+</a></div>
+            <div class="div-21"><a href="http://3.144.18.56:8000/categoria/9/" class="nav-link text-link px-2 text-body-secondary">LGBT+</a></div>
           </div>
           <div class="div-22">
             <img
@@ -244,67 +245,81 @@
         <div class="div-45"></div>
         <div class="div-46">Explore lugares parecidos</div>
         <div class="div-47">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/325d479a5f7a2870f5cd96d3354aace59214f261c205ef1e39b41b7f3bf450e8?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-            class="img-18"
-          />
-          <div class="div-48">
-            <img
-              loading="lazy"
-              srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/82f6460b69d0f25cf33ededf2645e6dc4c6575ff1045e49eaa5725fec79fc4b6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/82f6460b69d0f25cf33ededf2645e6dc4c6575ff1045e49eaa5725fec79fc4b6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/82f6460b69d0f25cf33ededf2645e6dc4c6575ff1045e49eaa5725fec79fc4b6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/82f6460b69d0f25cf33ededf2645e6dc4c6575ff1045e49eaa5725fec79fc4b6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/82f6460b69d0f25cf33ededf2645e6dc4c6575ff1045e49eaa5725fec79fc4b6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/82f6460b69d0f25cf33ededf2645e6dc4c6575ff1045e49eaa5725fec79fc4b6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/82f6460b69d0f25cf33ededf2645e6dc4c6575ff1045e49eaa5725fec79fc4b6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/82f6460b69d0f25cf33ededf2645e6dc4c6575ff1045e49eaa5725fec79fc4b6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-19"
-            />
-            <div class="div-49">Rota do Cacau em Altamira</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-20"
-            />
-            <div class="div-50">
-              Conheça as fazendas produtoras de cacau
-              <br />
-              orgânico e sinta o sabor da amazonia
-            </div>
-            <div class="div-51">#rolêbarato #praia #cidades #lgbtqi+</div>
-          </div>
-          <div class="div-52">
-            <img
-              loading="lazy"
-              srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/c8d3c43ebb614a8862b829cf49fddd120626de2c7372cf2be6b9f7b82fa516a0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/c8d3c43ebb614a8862b829cf49fddd120626de2c7372cf2be6b9f7b82fa516a0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c8d3c43ebb614a8862b829cf49fddd120626de2c7372cf2be6b9f7b82fa516a0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/c8d3c43ebb614a8862b829cf49fddd120626de2c7372cf2be6b9f7b82fa516a0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/c8d3c43ebb614a8862b829cf49fddd120626de2c7372cf2be6b9f7b82fa516a0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c8d3c43ebb614a8862b829cf49fddd120626de2c7372cf2be6b9f7b82fa516a0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/c8d3c43ebb614a8862b829cf49fddd120626de2c7372cf2be6b9f7b82fa516a0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/c8d3c43ebb614a8862b829cf49fddd120626de2c7372cf2be6b9f7b82fa516a0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-21"
-            />
-            <div class="div-53">Floresta Nacional do Tapajós</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-22"
-            />
-            <div class="div-54">
-              Reserva florestal onde o turista pode entrar em
-              <br />
-              contato com a natureza selvagem
-            </div>
-            <div class="div-55">#rolêbarato #cidades #restaurantes</div>
-          </div>
-          <div class="div-56">
-            <img
-              loading="lazy"
-              srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/e3c62dfca1dbad749f5d99be1f257d65b89317331ec41ab866fe66b31a8413c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3c62dfca1dbad749f5d99be1f257d65b89317331ec41ab866fe66b31a8413c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3c62dfca1dbad749f5d99be1f257d65b89317331ec41ab866fe66b31a8413c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3c62dfca1dbad749f5d99be1f257d65b89317331ec41ab866fe66b31a8413c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3c62dfca1dbad749f5d99be1f257d65b89317331ec41ab866fe66b31a8413c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3c62dfca1dbad749f5d99be1f257d65b89317331ec41ab866fe66b31a8413c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3c62dfca1dbad749f5d99be1f257d65b89317331ec41ab866fe66b31a8413c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3c62dfca1dbad749f5d99be1f257d65b89317331ec41ab866fe66b31a8413c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-23"
-            />
-            <div class="div-57">Centro hitórico de Óbidos</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-24"
-            />
-            <div class="div-58">
-              Ruas e prédios históricos fazem parte do passeio
-              <br />
-              por uma das mais antigas cidades do Pará
-            </div>
-            <div class="div-59">#rolêbarato #cidades #restaurantes</div>
+          
+      <!-- Chamada em 3 -->
+     <!-- Anúncio 1 -->
+<!-- Anúncio 1 -->
+{% if anuncio1 %}
+<div class="div-48">
+  <img
+    loading="lazy"
+    src="{{ anuncio1.imagem.url }}"
+    class="img-19"
+  />
+  <div class="div-49"><a href="{% url 'anuncio' anuncio1.id %}" class="text-link">{{ anuncio1.titulo }}</a></div>
+  <!-- estrela-->
+  <img
+    loading="lazy"
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+    class="img-20"
+  />
+  <div class="div-50">
+    {{ anuncio1.descricao }}
+    <br />
+  </div>
+  <div class="div-51">#rolêbarato #praia #cidades #lgbtqi+</div>
+</div>
+{% endif %}
+
+<!-- Anúncio 2 -->
+{% if anuncio2 %}
+<div class="div-52">
+  <img
+    loading="lazy"
+    src="{{ anuncio2.imagem.url }}"
+    class="img-21"
+  />
+  <div class="div-53"><a href="{% url 'anuncio' anuncio2.id %}" class="text-link">{{ anuncio2.titulo }}</a></div>
+  <!-- estrela-->
+  <img
+    loading="lazy"
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+    class="img-22"
+  />
+  <div class="div-54">
+    {{ anuncio2.descricao }}
+    <br />
+  </div>
+  <div class="div-55">#rolêbarato #cidades #restaurantes</div>
+</div>
+{% endif %}
+
+<!-- Anúncio 3 -->
+{% if anuncio3 %}
+<div class="div-56">
+  <img
+    loading="lazy"
+    src="{{ anuncio3.imagem.url }}"
+    class="img-23"
+  />
+  <div class="div-57"><a href="{% url 'anuncio' anuncio3.id %}" class="text-link">{{ anuncio3.titulo }}</a></div>
+  <!-- estrela-->
+  <img
+    loading="lazy"
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+    class="img-24"
+  />
+  <div class="div-58">
+    {{ anuncio3.descricao }}
+    <br />
+  </div>
+  <div class="div-59">#rolêbarato #cidades #restaurantes</div>
+</div>
+{% endif %}
+
+
+
+
           </div>
           {% if request.user.is_authenticated %}
                   <div class="centered-text">
@@ -315,12 +330,7 @@
           
           
               <footer>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/87e990a9ebf3193d116ba88a44b6c2332d1abe50c4608574a542bd2c55c2de51?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-            class="img-25"
-          />
-        </div>
+              </div>  
       </div>
       <div class="div-60">
         <div class="div-61">
@@ -333,7 +343,7 @@
           <div class="div-62">
             <div class="div-63" style="color: white; font: 700 16px 'Roboto', sans-serif;">
               <div class="column-4">
-                <a href="URL_DO_APOIE_FROMPARA" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">Apoie FromPara</a>
+                <a href="{{ quemsomos_url }}" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">Quem Somos</a>
                   <br />
                   <br /> <!-- {{ faq_url }} -->
                   <a href="{{ faq_url }}" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">FAQ's</a>
@@ -360,7 +370,7 @@
                   <br />
                   <a href="http://3.144.18.56:8000/categoria/3/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Cidades</a>
                   <br />
-                  <a href="http://3.144.18.56:8000/categoria/6/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">LGBTQI+</a>
+                  <a href="http://3.144.18.56:8000/categoria/9/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">LGBTQI+</a>
                   <br/>
                   <a href="http://3.144.18.56:8000/categoria/1/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Bares</a>
                   <br/>

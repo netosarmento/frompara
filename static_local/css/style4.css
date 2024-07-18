@@ -1,3 +1,18 @@
+/* Para telas pequenas (smartphones) */
+@media only screen and (max-width: 320px) {
+  /* Estilos para telas pequenas */
+}
+
+/* Para telas médias (tablets) */
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  /* Estilos para telas médias */
+}
+
+/* Para telas grandes (desktops) */
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+  /* Estilos para telas grandes */
+}
+
 .div {
     background-color: var(--sds-color-background-default-default);
     display: flex;
