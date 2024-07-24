@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<title>FromPara</title>
+
+{% block base_head %}
+<meta charset="UTF-8">
+    
+    
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-7j4Vs7sv3b0yz8ihDf8vdcW03B9CZM6s4GCr4jn2t/huFB0JUpYVImyG6p9ViNtZKthGjqv8L6kFLVeFGsDDMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">    
+
+{% endblock %}
+    
+{% block content %}
+<body>
+ 
+   <div class="carousel-container">
+    <input type="radio" name="carousel" id="carousel1" checked>
+    <input type="radio" name="carousel" id="carousel2">
+    <input type="radio" name="carousel" id="carousel3">
+  
+    <div class="carousel-slides">
+      <div class="slide">
+        <img
+          loading="lazy"
+          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+          class="img-11"
+        />
+        <div class="div-31">
+          <div class="div-32">Rio Tapajós</div>
+          <div class="div-33">
+            Santarém e Alter do Chão são algumas das cidades banhadas
+            <br />
+            por esse rio com atrações naturais imperdíveis
+          </div>
+        </div>
+      </div>
+  
+      <div class="slide">
+        <img src='{% static "img/barco-rio3.jpg" %}' class="img-11">
+        <div class="div-31">
+          <div class="div-32">Titulo verificando como vai ficar</div>
+          <div class="div-33">Descrição do Logoplaca muito legal de divulgaçao</div>
+        </div>
+      </div>
+  
+      <div class="slide">
+        <img src='{% static "img/CAM.jpg" %}' class="img-11">
+        <div class="div-31">
+          <div class="div-32">FromPara</div>
+          <div class="div-33">Descrição do FromPara nova imagem ilustrativa</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="carousel-navigation">
+      <label class="carousel-dot" for="carousel1"></label>
+      <label class="carousel-dot" for="carousel2"></label>
+      <label class="carousel-dot" for="carousel3"></label>
+    </div>
+  </div>
+  
+
+
+    <div class="div-38">Pra quem quer se divertir gastando pouco</div>
+    <div class="div-39">Rolês até 50 reais</div>
+    
+    <div class="div-40">
+      {% for anuncio in anuncios|slice:"6" %}
+        <div class="div-41">
+          <img
+            loading="lazy"
+            srcset="{{ anuncio.imagem.url }}?width=100 100w, {{ anuncio.imagem.url }}?width=200 200w, {{ anuncio.imagem.url }}?width=400 400w, {{ anuncio.imagem.url }}?width=800 800w, {{ anuncio.imagem.url }}?width=1200 1200w, {{ anuncio.imagem.url }}?width=1600 1600w, {{ anuncio.imagem.url }}?width=2000 2000w, {{ anuncio.imagem.url }}"
+            class="img-13"
+          />
+          <div class="div-42">
+            <a href="{% url 'anuncio' anuncio.id %}" class="text-link">{{ anuncio.titulo }}</a>
+          </div>
+          <div class="div-43">{{ anuncio.descricao }}</div>
+          <div class="div-44">#conhecernorte #Para #FromPara</div>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <img
+      loading="lazy"
+      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+      class="img-20"
+    />
+    
+    
+    
+    
+      
+    
+    
+
+
+      
+  </div>
+  
+    <!-- jQuery and Bootstrap Bundle with Popper -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+5RA4g1EppNK5Rx8+2qc1OwH/CmAKjdj3HPt/msVJ6+oZfo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.bundle.min.js" integrity="sha384-2V4UEh3wQQh5kN5Ta0nqGvFYzKwrZy+G9DH1McyjUavvKkTKxXq7rpqNT8K5l+Co" crossorigin="anonymous"></script>
+  
+<!-- Custom JavaScript -->
+<script>
+  // Função para mudar os slides automaticamente a cada 5 segundos
+  function carousel() {
+    const slides = document.querySelectorAll('.carousel-slides .slide');
+    const radios = document.querySelectorAll('[name="carousel"]');
+
+    let currentSlide = 0;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      radios[currentSlide].checked = false;
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.add('active');
+      radios[currentSlide].checked = true;
+    }
+
+    // Iniciar o carousel
+    nextSlide();
+
+    // Trocar de slide a cada 5 segundos
+    setInterval(nextSlide, 5000);
+  }
+
+  // Chamar a função para iniciar o carousel quando o documento estiver pronto
+  document.addEventListener('DOMContentLoaded', carousel);
+</script>
+    </body>
+    {% endblock %}
+      
+      
+     
