@@ -1,0 +1,258 @@
+
+  
+  
+
+
+
+  .img-11 {
+    aspect-ratio: 7.69;
+    object-fit: auto;
+    object-position: center;
+    width: 709px;
+    align-self: center;
+    margin-top: 68px;
+    max-width: 100%;
+  }
+  @media (max-width: 991px) {
+    .img-11 {
+      margin-top: 40px;
+    }
+  }
+  
+  
+
+  .carousel-item img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+
+
+.anuncio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.img-ad {
+  width: 250px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.title {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.img-small {
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+.description {
+  margin-top: 5px;
+  font-size: 14px;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.description a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #f9f9f9;
+  color: #1e64eb;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+.tags {
+  color: #1e64eb;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+@media (max-width: 991px) {
+  .anuncio {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  .div-60 {
+    background-color: var(--Azul_geral, #343a40);
+    display: flex;
+    margin-top: 276px;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 71px 60px;
+  }
+  @media (max-width: 991px) {
+    .div-60 {
+      max-width: 100%;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+  .div-61 {
+    display: flex;
+    margin-left: 122px;
+    width: 517px;
+    max-width: 100%;
+    flex-direction: column;
+  }
+  .img-26 {
+    aspect-ratio: 4.55;
+    object-fit: auto;
+    object-position: center;
+    width: 162px;
+    max-width: 100%;
+  }
+  
+  .div-62 {
+    margin-top: 29px;
+  }
+  @media (max-width: 991px) {
+    .div-62 {
+      max-width: 100%;
+    }
+  }
+  .div-63 {
+    gap: 20px;
+    display: flex;
+  }
+  @media (max-width: 991px) {
+    .div-63 {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+  .column-4 {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 33%;
+    margin-left: 0px;
+  }
+  @media (max-width: 991px) {
+    .column-4 {
+      width: 100%;
+    }
+  }
+  .div-64 {
+    color: #fff;
+    font: 700 16px Roboto, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .div-64 {
+      margin-top: 35px;
+    }
+  }
+  .column-5 {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 33%;
+    margin-left: 20px;
+  }
+  @media (max-width: 991px) {
+    .column-5 {
+      width: 100%;
+    }
+  }
+  .div-65 {
+    color: #fff;
+    font: 700 16px Roboto, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .div-65 {
+      margin-top: 35px;
+    }
+  }
+  .column-6 {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 33%;
+    margin-left: 20px;
+  }
+  @media (max-width: 991px) {
+    .column-6 {
+      width: 100%;
+    }
+  }
+  .div-66 {
+    color: #fff;
+    font: 700 16px Roboto, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .div-66 {
+      margin-top: 35px;
+    }
+  }
+  .div-67 {
+    color: #fff;
+    margin-top: 45px;
+    font: 300 16px Roboto, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .div-67 {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  .centered-text {
+    text-align: center;
+    margin-top: 20px; /* Ajustar a margem conforme necessário */
+    font-family:'Comic Sans MS', cursive;/* Definir a fonte como Comic Sans */
+    color: #333; /* Cor do texto */
+    font-size: 18px; /* Tamanho do texto */
+    font-weight: bolder;
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+  }
