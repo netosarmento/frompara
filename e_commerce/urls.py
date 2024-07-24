@@ -12,7 +12,9 @@ from .views import (home_page,
                     about_page, 
                     contact_page,
                     faq,
-                    quemsomos
+                    quemsomos,
+                    termos,
+                    politicas
 )
 
 urlpatterns = [
@@ -34,6 +36,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('faq', faq, name='faq'),
     path('quemsomos', quemsomos, name='quemsomos'),
+    path('termos', termos, name='termos'),
+    path('politicas', politicas, name='politicas'),
 ]
 
 if settings.DEBUG:

@@ -4,8 +4,12 @@ from .models import Categoria, Anuncio
 
 def postagens(request):
     categorias = Categoria.objects.all()
-    ultimos_anuncios = Anuncio.objects.all()[:6]
-    return render(request, 'postagens.html', {'categorias': categorias, 'anuncios': ultimos_anuncios})
+    ultimos_anuncios = Anuncio.objects.order_by('-criado_em')[:6]  # Ordena por 'criado_em' em ordem decrescente
+    context = {
+        'categorias': categorias,
+        'anuncios': ultimos_anuncios,
+    }
+    return render(request, 'postagens.html', context)
 
 def categoria(request, categoria_id): # Adicione o parâmetro categoria_id
     categoria = get_object_or_404(Categoria, id=categoria_id)

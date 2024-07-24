@@ -1,401 +1,147 @@
+{% extends "base.html" %}
 {% load static %}
-{% url 'home' as home_url %}
-{% url 'contact' as contact_url %}
-{% url 'products:list' as products_list_url %}
-{% url 'login' as login_url %}
-{% url 'logout' as logout_url %}
-{% url 'register' as register_url %}
-{% url 'cart:home' as cart_url %}
-{% url 'faq' as faq_url %}
-{% url 'quemsomos' as quemsomos_url %}
-<title>Home FromPara</title>
+
+
+<title>FromPara</title>
 
 {% block base_head %}
-    <link rel='stylesheet' href='{% static "css/main1.css" %}'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    	     
-	{% endblock %}
+<meta charset="UTF-8">
     
-  {% block content %}
+    
 
-  <div class="div">
-      <div class="div-2">
-        <div class="div-3">
-          <div class="div-4">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/aec46dfb2e36745f9cfc0aa3fffcc0d1abf3774db15e62b2afe6248cfca402e6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img"
-            />
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c773fca5f1332271a0dd892f5a25a16b2944403dd262e1659a90b19633b35391?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-2"
-            />
-          </div>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/af9836cbc7f3a36d00a064e37b03a1fa7c7088d41de0350963ff749c0c431d4a?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-            class="img-3"
-          />
-        </div>
-      </div>
-      <div class="div-5">
-        <div class="div-6">
-          <div class="div-7">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/62e1e4c075e5248f4fc46b9d7308d043f3fdf417f925df824df6da6dd493eda1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-4"
-            />
-            <div class="div-8">
-              <form method="GET" action="{% url 'search:query' %}" class="form my-2 my-lg-0 search-form">
-                <div class="input-group">
-                  <input class="form-control" type="search" placeholder="Pesquisar" name="q" aria-label="Pesquisar" value="{{ request.GET.q }}">
-                  <span class="input-group-btn">
-                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                  </span>
-                </div>
-              </form>
-            </div>
-            
-            <div class="div-9 {% if request.path == home_url %}active{% endif %}"> 
-              <a href="{{ home_url }}" class="nav-link text-link px-2 text-body-secondary">Home </a>
-            </div>
-            <div class="div-10">
-              <div class="div-11 nav-link text-link px-2 text-body-secondary {% if request.path == products_list_url %}active{% endif %}">
-                <a href="{{ products_list_url }}" class="nav-link text-link px-2 text-body-secondary">Produtos</a>
-              </div>
-            </div>          
-            <div class="div-12 {% if request.path == contact_url %} active {% endif %}">
-              <a href="{{ contact_url }}" class="nav-link text-link px-2 text-body-secondary">Contato</a>
-            </div>
-          </div>
-        </div>
-        <div class="div-13">
-          <img loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab9afa3ed2f0946ea50b6a732f0e1bb23f6090735a7250dec0da612a5c8d3c57?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-            class="img-5"/>
-            <div class="div-14 {% if request.path == cart_url %} active {% endif %}">
-              <a href="{{ cart_url }}" class="nav-link px-2 text-body-secondary no-underline">
-                <span class="navbar-cart-count">
-                  {{ request.session.cart_items }}
-                </span>
-                <i class="fa fa-shopping-cart"></i>Carrinho
-              </a>
-            </div>          
-        <div class="div-15">
-          <div class="div-16">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab407b6df6500f5b865d7687a6a9d494c39d990b106b6570141c2fe39acac794?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-6"
-            />
-            <div class="div-17">
-              <a href="http://3.144.18.56:8000/categoria/1/" class="nav-link px-2 text-body-secondary no-underline"> Bares &
-            <br />
-              Restaurantes</a>
-            </div>
-          </div>
-          <div class="div-18">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3a04a5b4810e4ad7d1ecd0009da06be17fbb9ab65a8fee5601db1da4d00eec70?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-7"
-            />
-            <div class="div-19"><a href="http://3.144.18.56:8000/categoria/3/" class="nav-link text-link px-2 text-body-secondary">Cidades</a></div>
-          </div>
-          <div class="div-20">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/204eddc8ab49cfdb605f783daadf9b1d307a401b128d6747faeb81b33ff75795?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-8"
-            />
-            <div class="div-21"><a href="http://3.144.18.56:8000/categoria/9/" class="nav-link text-link px-2 text-body-secondary">LGBT+</a></div>
-          </div>
-          <div class="div-22">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c5635c0d1e85acb3a19c451c235cbec90546b6e943bb950326c4b92e0995d554?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-9"
-            />
-            <div class="div-23"><a href="http://3.144.18.56:8000/categoria/5/" class="nav-link text-link px-2 text-body-secondary">Praias</a></div>
-          </div>
-          <div class="div-24">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/949bdc7a36c257378e70f04fd588510bd9d46cb703c409e101fffccc9495ecc6?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-              class="img-10"
-            />
-            <div class="div-25">
-              <a href="http://3.144.18.56:8000/categoria/4/" class="nav-link text-link px-2 text-body-secondary">
-                Pontos <br /> Turísticos
-            </a>
-            </div>
-          </div>
-          {% if request.user.is_authenticated %}
-          <div class="div-26 {% if request.path == logout_url %}active{% endif %}">
-          <a href="{{ logout_url }}" class="nav-link px-2 text-body-secondary no-underline">Logout</a>
-          </div>
-          {% else %}
-          <div class="div-27 {% if request.path == login_url %}active{% endif %}">
-          <a href="{{ login_url }}?next={{ request.path }}" class="nav-link px-2 text-body-secondary no-underline">Login</a>
-          </div>
-          <div class="div-28 {% if request.path == register_url %}active{% endif %}">
-          <a href="{{ register_url }}" class="nav-link px-2 text-body-secondary no-underline">Registrar-se</a>
-          </div>
-          {% endif %}
-          {% endblock %}
-          </div>
-        </div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-7j4Vs7sv3b0yz8ihDf8vdcW03B9CZM6s4GCr4jn2t/huFB0JUpYVImyG6p9ViNtZKthGjqv8L6kFLVeFGsDDMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">    
+
+{% endblock %}
+    
+{% block content %}
+<body>
+ 
+   <div class="carousel-container">
+    <input type="radio" name="carousel" id="carousel1" checked>
+    <input type="radio" name="carousel" id="carousel2">
+    <input type="radio" name="carousel" id="carousel3">
+  
+    <div class="carousel-slides">
+      <div class="slide">
         <img
           loading="lazy"
-          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+          srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/c73d9ec32d9738268e348ccfc0be1bcce2568612d8968a492d192bd4772ee968?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
           class="img-11"
         />
-        <div class="div-29">Praia do Ajuruteua</div>
-        <div class="div-30">Texto do proprietário</div>
         <div class="div-31">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/b35a9dac16d07aef967e3923cc9086956311b3c8a555b6a94deed844b73f9bec?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-            class="img-12"
-          />
-          <div class="div-32">#rolêbarato #praia #cidades #lgbtqi+</div>
-        </div>
-        <div class="div-33">
-          Praia de água doce. A poucos quilômetros de
-          <br />
-          Belém Restaurantes e passeios para toda a família
-        </div>
-        <div class="div-34">
-          <div class="div-35">
-            <div class="column">
-              <img
-                loading="lazy"
-                srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/9a921cb15f182ef2226e80461986989c21af4d403f95821c31a4e7aafc01655f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a921cb15f182ef2226e80461986989c21af4d403f95821c31a4e7aafc01655f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a921cb15f182ef2226e80461986989c21af4d403f95821c31a4e7aafc01655f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a921cb15f182ef2226e80461986989c21af4d403f95821c31a4e7aafc01655f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a921cb15f182ef2226e80461986989c21af4d403f95821c31a4e7aafc01655f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a921cb15f182ef2226e80461986989c21af4d403f95821c31a4e7aafc01655f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a921cb15f182ef2226e80461986989c21af4d403f95821c31a4e7aafc01655f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a921cb15f182ef2226e80461986989c21af4d403f95821c31a4e7aafc01655f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-                class="img-13"
-              />
-            </div>
-            <div class="column-2">
-              <div class="div-36">
-                <img
-                  loading="lazy"
-                  srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b748bb9e215662e1cd7a03e78cda47543f5bb1ca67c3d24be8112b6452875b78?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b748bb9e215662e1cd7a03e78cda47543f5bb1ca67c3d24be8112b6452875b78?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b748bb9e215662e1cd7a03e78cda47543f5bb1ca67c3d24be8112b6452875b78?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b748bb9e215662e1cd7a03e78cda47543f5bb1ca67c3d24be8112b6452875b78?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b748bb9e215662e1cd7a03e78cda47543f5bb1ca67c3d24be8112b6452875b78?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b748bb9e215662e1cd7a03e78cda47543f5bb1ca67c3d24be8112b6452875b78?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b748bb9e215662e1cd7a03e78cda47543f5bb1ca67c3d24be8112b6452875b78?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b748bb9e215662e1cd7a03e78cda47543f5bb1ca67c3d24be8112b6452875b78?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-                  class="img-14"
-                />
-                <img
-                  loading="lazy"
-                  srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/84addd977af15029e4c4ba7c905d353c8a55c02eb9fdc9fc2b40de4ed424d5ce?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/84addd977af15029e4c4ba7c905d353c8a55c02eb9fdc9fc2b40de4ed424d5ce?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/84addd977af15029e4c4ba7c905d353c8a55c02eb9fdc9fc2b40de4ed424d5ce?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/84addd977af15029e4c4ba7c905d353c8a55c02eb9fdc9fc2b40de4ed424d5ce?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/84addd977af15029e4c4ba7c905d353c8a55c02eb9fdc9fc2b40de4ed424d5ce?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/84addd977af15029e4c4ba7c905d353c8a55c02eb9fdc9fc2b40de4ed424d5ce?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/84addd977af15029e4c4ba7c905d353c8a55c02eb9fdc9fc2b40de4ed424d5ce?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/84addd977af15029e4c4ba7c905d353c8a55c02eb9fdc9fc2b40de4ed424d5ce?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-                  class="img-15"
-                />
-              </div>
-            </div>
+          <div class="div-32">Rio Tapajós</div>
+          <div class="div-33">
+            Santarém e Alter do Chão são algumas das cidades banhadas
+            <br />
+            por esse rio com atrações naturais imperdíveis
           </div>
         </div>
-        <div class="div-37">
-          <div class="div-38">
-            <div class="column">
-              <div class="div-39">
-                Ajuruteua é uma bela vila de pescadores situada no município de
-                Bragança, no Pará. Conhecida por sua praia paradisíaca de areias
-                brancas e águas mornas, Ajuruteua é um destino turístico cada vez
-                mais popular. A vila oferece uma experiência autêntica, com suas
-                casas rústicas de palafitas e uma comunidade acolhedora. Além do
-                turismo, a pesca é uma atividade econômica essencial para os
-                moradores locais. Ajuruteua também é um ponto de partida ideal para
-                explorar os manguezais e a rica biodiversidade da região. É um lugar
-                que combina tranquilidade e beleza natural, atraindo visitantes em
-                busca de um refúgio sereno.
-              </div>
-            </div>
-            <div class="column-3">
-              <div class="div-40">
-                <div class="div-41">
-                  <div class="div-42">
-                    <div class="div-43">Entre em contato</div>
-                    <img
-                      loading="lazy"
-                      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/7eea59192e537730cdbbf948c300ebe2704cba8636205733b8189225313365ef?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/7eea59192e537730cdbbf948c300ebe2704cba8636205733b8189225313365ef?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7eea59192e537730cdbbf948c300ebe2704cba8636205733b8189225313365ef?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/7eea59192e537730cdbbf948c300ebe2704cba8636205733b8189225313365ef?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/7eea59192e537730cdbbf948c300ebe2704cba8636205733b8189225313365ef?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/7eea59192e537730cdbbf948c300ebe2704cba8636205733b8189225313365ef?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/7eea59192e537730cdbbf948c300ebe2704cba8636205733b8189225313365ef?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/7eea59192e537730cdbbf948c300ebe2704cba8636205733b8189225313365ef?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-                      class="img-16"
-                    />
-                  </div>
-                  <img
-                    loading="lazy"
-                    srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/da6a0ab562559b6b801a5636251d2191d4f8be2489e52d24e908cb6114c599be?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/da6a0ab562559b6b801a5636251d2191d4f8be2489e52d24e908cb6114c599be?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/da6a0ab562559b6b801a5636251d2191d4f8be2489e52d24e908cb6114c599be?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/da6a0ab562559b6b801a5636251d2191d4f8be2489e52d24e908cb6114c599be?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/da6a0ab562559b6b801a5636251d2191d4f8be2489e52d24e908cb6114c599be?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/da6a0ab562559b6b801a5636251d2191d4f8be2489e52d24e908cb6114c599be?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/da6a0ab562559b6b801a5636251d2191d4f8be2489e52d24e908cb6114c599be?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/da6a0ab562559b6b801a5636251d2191d4f8be2489e52d24e908cb6114c599be?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-                    class="img-17"
-                  />
-                </div>
-                <div class="div-44">
-                  Idades entre 8 e 65 anos,
-                  <br />
-                  máximo de 100 por grupo
-                  <br />
-                  Duração: 5h
-                  <br />
-                  Horário de início: confira a disponibilidade
-                  <br />
-                  Ingresso digital
-                  <br />
-                  Guia ao vivo: Inglês, Espanhol
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="div-45"></div>
-        <div class="div-46">Explore lugares parecidos</div>
-        <div class="div-47">
-          
-      <!-- Chamada em 3 -->
-     <!-- Anúncio 1 -->
-<!-- Anúncio 1 -->
-{% if anuncio1 %}
-<div class="div-48">
-  <img
-    loading="lazy"
-    src="{{ anuncio1.imagem.url }}"
-    class="img-19"
-  />
-  <div class="div-49"><a href="{% url 'anuncio' anuncio1.id %}" class="text-link">{{ anuncio1.titulo }}</a></div>
-  <!-- estrela-->
-  <img
-    loading="lazy"
-    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-    class="img-20"
-  />
-  <div class="div-50">
-    {{ anuncio1.descricao }}
-    <br />
-  </div>
-  <div class="div-51">#rolêbarato #praia #cidades #lgbtqi+</div>
-</div>
-{% endif %}
-
-<!-- Anúncio 2 -->
-{% if anuncio2 %}
-<div class="div-52">
-  <img
-    loading="lazy"
-    src="{{ anuncio2.imagem.url }}"
-    class="img-21"
-  />
-  <div class="div-53"><a href="{% url 'anuncio' anuncio2.id %}" class="text-link">{{ anuncio2.titulo }}</a></div>
-  <!-- estrela-->
-  <img
-    loading="lazy"
-    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-    class="img-22"
-  />
-  <div class="div-54">
-    {{ anuncio2.descricao }}
-    <br />
-  </div>
-  <div class="div-55">#rolêbarato #cidades #restaurantes</div>
-</div>
-{% endif %}
-
-<!-- Anúncio 3 -->
-{% if anuncio3 %}
-<div class="div-56">
-  <img
-    loading="lazy"
-    src="{{ anuncio3.imagem.url }}"
-    class="img-23"
-  />
-  <div class="div-57"><a href="{% url 'anuncio' anuncio3.id %}" class="text-link">{{ anuncio3.titulo }}</a></div>
-  <!-- estrela-->
-  <img
-    loading="lazy"
-    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d41af5c820a130c5cea2ee1d10c86498c5dc3336816d06b462250f5ea94015c1?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-    class="img-24"
-  />
-  <div class="div-58">
-    {{ anuncio3.descricao }}
-    <br />
-  </div>
-  <div class="div-59">#rolêbarato #cidades #restaurantes</div>
-</div>
-{% endif %}
-
-
-
-
-          </div>
-          {% if request.user.is_authenticated %}
-                  <div class="centered-text">
-                      <h1>Premium</h1>
-                      <p>{{ premium_content }}</p>
-                  </div>
-              {% endif %}
-          
-          
-              <footer>
-              </div>  
       </div>
-      <div class="div-60">
-        <div class="div-61">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/d563387b4cdd1bee6a9f6f181b81bf151501c3d0904c30ca66d1a8a22ff8ab3f?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-            class="img-26"
-          />
-          
-          <div class="div-62">
-            <div class="div-63" style="color: white; font: 700 16px 'Roboto', sans-serif;">
-              <div class="column-4">
-                <a href="{{ quemsomos_url }}" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">Quem Somos</a>
-                  <br />
-                  <br /> <!-- {{ faq_url }} -->
-                  <a href="{{ faq_url }}" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">FAQ's</a>
-                  <br />
-                  <br />
-                  <a href="URL_DO_CEO" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">CEO</a>
-                  <br />
-                  <br />
-                  Suporte: frompara@outlook.com
-                  <br />
-                  <br />
-                  <a href="" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">Politica de Privacidade
-                  <br />
-                  <br />
-                  <a href="" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">Termos de Uso
-                </div>
-              </div>
-              <div class="column-5">
-                <div class="div-65">
-                  
-                  <br />
-                  <br />
-                  
-                  <br />
-                  <a href="http://3.144.18.56:8000/categoria/3/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Cidades</a>
-                  <br />
-                  <a href="http://3.144.18.56:8000/categoria/9/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">LGBTQI+</a>
-                  <br/>
-                  <a href="http://3.144.18.56:8000/categoria/1/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Bares</a>
-                  <br/>
-                  <a href="http://3.144.18.56:8000/categoria/4/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Pontos Turísticos</a>
-                </div>
-              </div>
-            <!-- Coluna com links estilizados -->
-  <div class="column-6">
-    <div class="div-66" style="color: white;">
-        
-      <br />
-      <br />
-      <br />
-      <br />
-      
-      <br />
-      <br />
-      
-      <br />
-      <br />
+  
+      <div class="slide">
+        <img src='{% static "img/barco-rio3.jpg" %}' class="img-11">
+        <div class="div-31">
+          <div class="div-32">Logoplaca Ilustrativa</div>
+          <div class="div-33">Descrição do Logoplaca muito legal</div>
+        </div>
+      </div>
+  
+      <div class="slide">
+        <img src='{% static "img/CAM.jpg" %}' class="img-11">
+        <div class="div-31">
+          <div class="div-32">FromPara</div>
+          <div class="div-33">Descrição do FromPara nova imagem ilustrativa</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="carousel-navigation">
+      <label class="carousel-dot" for="carousel1"></label>
+      <label class="carousel-dot" for="carousel2"></label>
+      <label class="carousel-dot" for="carousel3"></label>
     </div>
   </div>
   
-       <!-- Rodapé com direitos reservados -->
-       <div class="div-67" style="color: white; font: 700 16px 'Roboto', sans-serif;">© 2024 FromPara Todos os direitos reservados.</div>
+
+
+    <div class="div-38">Pra quem quer se divertir gastando pouco</div>
+    <div class="div-39">Rolês até 50 reais</div>
     
-      </div>
+    <div class="div-40">
+      {% for anuncio in anuncios|slice:"6" %}
+        <div class="div-41">
+          <img
+            loading="lazy"
+            srcset="{{ anuncio.imagem.url }}?width=100 100w, {{ anuncio.imagem.url }}?width=200 200w, {{ anuncio.imagem.url }}?width=400 400w, {{ anuncio.imagem.url }}?width=800 800w, {{ anuncio.imagem.url }}?width=1200 1200w, {{ anuncio.imagem.url }}?width=1600 1600w, {{ anuncio.imagem.url }}?width=2000 2000w, {{ anuncio.imagem.url }}"
+            class="img-13"
+          />
+          <div class="div-42">
+            <a href="{% url 'anuncio' anuncio.id %}" class="text-link">{{ anuncio.titulo }}</a>
+          </div>
+          <div class="div-43">{{ anuncio.descricao }}</div>
+          <div class="div-44">#conhecernorte #Para #FromPara</div>
+        </div>
+      {% endfor %}
     </div>
+    
+    <img
+      loading="lazy"
+      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+      class="img-20"
+    />
+    
+    
+    
+    
+      
+    
+    
+
+
+      
+  </div>
+  
+    <!-- jQuery and Bootstrap Bundle with Popper -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+5RA4g1EppNK5Rx8+2qc1OwH/CmAKjdj3HPt/msVJ6+oZfo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.bundle.min.js" integrity="sha384-2V4UEh3wQQh5kN5Ta0nqGvFYzKwrZy+G9DH1McyjUavvKkTKxXq7rpqNT8K5l+Co" crossorigin="anonymous"></script>
+  
+<!-- Custom JavaScript -->
+<script>
+  // Função para mudar os slides automaticamente a cada 5 segundos
+  function carousel() {
+    const slides = document.querySelectorAll('.carousel-slides .slide');
+    const radios = document.querySelectorAll('[name="carousel"]');
+
+    let currentSlide = 0;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      radios[currentSlide].checked = false;
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.add('active');
+      radios[currentSlide].checked = true;
+    }
+
+    // Iniciar o carousel
+    nextSlide();
+
+    // Trocar de slide a cada 5 segundos
+    setInterval(nextSlide, 5000);
+  }
+
+  // Chamar a função para iniciar o carousel quando o documento estiver pronto
+  document.addEventListener('DOMContentLoaded', carousel);
+</script>
+    </body>
+    {% endblock %}
+      
+      
+     

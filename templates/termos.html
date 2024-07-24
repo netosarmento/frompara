@@ -1,0 +1,193 @@
+{% load static %}
+{% url 'home' as home_url %}
+<title>Termos</title>
+<html lang="pt-br">
+<meta charset="utf-8">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1 " />
+{% block base_head %}
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/estilos.css"> -->
+  {% endblock %}    
+<style>
+    .back-arrow {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 24px;
+      }
+    
+    body {
+        min-width: 372px;
+    }
+    
+    
+    p.truncar-3l {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    @media screen and (max-width: 469px) {
+        .mt-xs-3 {
+            margin-top: 1rem;
+        }
+    }
+    
+    label:hover .text-dark {
+        transition: color 0.2s ease;
+        color: white !important;
+    }
+    
+    label .text-dark {
+        transition: color 0.2s ease;
+    }
+    
+    /* complementado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+    .btn-check:checked+.btn-outline-danger h3,
+    .btn-check:active+.btn-outline-danger h3,
+    .btn-check:hover+.btn-outline-danger h3,
+    .btn-check:checked+.btn-outline-danger hr,
+    .btn-check:active+.btn-outline-danger hr,
+    .btn-check:hover+.btn-outline-danger hr,
+    .btn-check:checked+.btn-outline-danger h4,
+    .btn-check:active+.btn-outline-danger h4,
+    .btn-check:hover+.btn-outline-danger h4,
+    .btn-check:checked+.btn-outline-danger p,
+    .btn-check:active+.btn-outline-danger p,
+    .btn-check:hover+.btn-outline-danger p,
+    .btn-check:checked+.btn-outline-danger .text-dark,
+    .btn-check:active+.btn-outline-danger .text-dark,
+    .btn-check:hover+.btn-outline-danger .text-dark {
+        transition: color 0.2s ease;
+        color: white !important;
+    }
+    
+    /* adicionado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+    .btn-check:checked+.btn-outline-danger,
+    .btn-check:active+.btn-outline-danger,
+    .btn-check:hover+.btn-outline-danger {
+        transition: background-color 0.2s ease;
+        background-color: var(--bs-danger) !important;
+    }
+    
+    .flex-even {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .accordion-button:not(.collapsed) {
+        color: white;
+        background-color: #dc3545;
+    }
+    
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    
+    fieldset.row .form-floating>label {
+        margin-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+    
+    /* adicionado para deixar links de paginação em vermelho */
+    .page-link {
+        color: var(--bs-danger);
+    }
+</style>
+<header>
+    <div class="back-arrow">
+        <a href="{{ home_url }}" class="text-link no-underline" style="color: black;">
+          &#8592; <!-- Código HTML para a seta esquerda -->
+        </a>
+      </div>
+</header>
+  
+<body>
+    
+
+        <main class="flex-fill">
+            <div class="container" style="display: flex; justify-content: center; align-items: center;height: 10vh;"></div>
+            <h1>Termos de Uso</h1>
+            <hr>
+            <h2>1. Introdução</h2>
+            <p>Estes Termos de Uso visam estabelecer as regras e diretrizes para o uso do nosso site e plataforma Frompara, bem como a coleta, uso e armazenamento de dados pessoais e cookies.</p>
+    
+            <h2>2. Coleta de Dados</h2>
+            <p>Coletamos dados pessoais e cookies para melhorar nossos serviços e proporcionar uma melhor experiência para nossos usuários. Os dados coletados podem incluir, mas não se limitam a, endereços IP, tipo de navegador e sistema operacional.</p>
+    
+            <h2>3. Uso de Cookies</h2>
+            <p>Usamos cookies para armazenar informações sobre as preferências dos nossos usuários e melhorar nossos serviços. Cookies são pequenos arquivos de texto armazenados no dispositivo do usuário e podem ser acessados pelo nosso site.</p>
+    
+            <h2>4. Gerenciamento de Cookies</h2>
+            <p>4.1. Nosso site usa cookies para melhorar a experiência do usuário.</p>
+            <p>4.2. O usuário pode gerenciar suas preferências de cookies através das configurações do navegador.</p>
+            <p>4.3. Lembre-se de que desativar cookies pode afetar o desempenho da nossa plataforma e algumas funcionalidades podem não funcionar corretamente.</p>
+    
+            <h2>5. Legitimação do Tratamento de Cookies</h2>
+            <p>5.1. Ao consentir com esta Política de Cookies, o usuário autoriza a coleta e uso de seus dados pessoais e cookies.</p>
+    
+            <h2>6. Comunicação de Dados</h2>
+            <p>6.1. Em regra, não comunicamos dados a terceiros, exceto em casos em que seja necessário para o funcionamento adequado da nossa plataforma ou por obrigação legal.</p>
+    
+            <h2>7. Direitos do Usuário</h2>
+            <p>7.1. O usuário tem o direito de:</p>
+            <ul>
+                <li>Retirar o consentimento desta Política de Cookies;</li>
+                <li>Acessar, controlar, retificar, limitar e se opor ao processamento de seus dados;</li>
+                <li>Contestar o uso de seus dados entrando em contato com os administradores da nossa plataforma.</li>
+            </ul>
+    
+            <h2>8. Vigência</h2>
+            <p>Esta Política de Cookies entra em vigor em 2 de novembro de 2022.</p>
+    
+            <p>Nossa visão é tornar o Pará um destino turístico de referência no Brasil e no mundo, conhecido por sua riqueza cultural, histórica e natural. E estamos trabalhando arduamente para tornar essa visão uma realidade.</p>
+        </div>
+        </main>
+
+        <footer class="border-top text-muted bg-light">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-12 col-md-4 text-center">
+                        &copy; 2024 - FromPara Online MEI<br>
+                        Loja Virtual, Belém/PA <br>
+                        CPNJ 99.999.999/0001-99
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="/privacidade.html" class="text-decoration-none text-dark">
+                            Política de Privacidade
+                        </a><br>
+                        <a href="/termos.html" class="text-decoration-none text-dark">
+                            Termos de Uso
+                        </a><br>
+                        <a href="/quemsomos.html" class="text-decoration-none text-dark">
+                            Quem Somos
+                        </a><br>
+                        <a href="/trocas.html" class="text-decoration-none text-dark">
+                            Trocas e Devoluções
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="/contato.html" class="text-decoration-none text-dark">
+                            Contato pelo Site
+                        </a><br>
+                        E-mail: <a href="mailto:email@dominio.com" class="text-decoration-none text-dark">
+                            email@dominio.com
+                        </a><br>
+                        Telefone: <a href="phone:28999990000" class="text-decoration-none text-dark">
+                            (91) 99999-0000
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+   <!-- <script src=""></script> -->
+</body>
+
+</html>
+
+
+

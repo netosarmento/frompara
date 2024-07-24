@@ -11,16 +11,12 @@ def is_ajax(request):
 
 def home_page(request):
     categorias = Categoria.objects.all()
-    ultimos_anuncios = Anuncio.objects.order_by('-criado_em')[:3]  # Ordena por 'criado_em' em ordem decrescente
-    context = {
-        'categorias': categorias,
-        'anuncio1': ultimos_anuncios[0] if len(ultimos_anuncios) > 0 else None,
-        'anuncio2': ultimos_anuncios[1] if len(ultimos_anuncios) > 1 else None,
-        'anuncio3': ultimos_anuncios[2] if len(ultimos_anuncios) > 2 else None,
-    }
+    ultimos_anuncios = Anuncio.objects.all()[:6]
     if request.user.is_authenticated:
         context['premium_content'] = 'Você é um usuário Premium'
-    return render(request, 'home_page.html', context)
+    return render(request, 'home_page.html', {'categorias': categorias,
+                                         'anuncios': ultimos_anuncios})
+
     
 def about_page(request):
     context = {
@@ -75,3 +71,12 @@ def faq(request):
 def quemsomos(request):
     
     return render(request, 'quemsomos.html')
+
+
+def politicas(request):
+    
+    return render(request, 'politicas.html')
+
+def termos(request):
+    
+    return render(request, 'termos.html')
