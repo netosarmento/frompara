@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block base_head %}
+<link rel='stylesheet' href='{% static "css/anuncio.css" %}'>
+{% endblock %}
 {% block conteudo %}
 
-<h1 class="ui header">{{ anuncio }}
-    <div class="sub header">Anunciado em: {{ anuncio.criado_em }}</div>
-    
-</h1>
+<div class="container">
+    <h1 class="ui header">{{ anuncio }}
+        <div class="sub header">Anunciado em: {{ anuncio.criado_em }}</div>
+    </h1>
 
-<div class="ui grid">
-    <div class="sixteen wide column">
-        <div class="ui image">
-            <img src="{{ anuncio.imagem.url }}" alt="Imagem do Anúncio">
+    <div class="ui grid">
+        <div class="sixteen wide column">
+            <div class="ui image">
+                <img src="{{ anuncio.imagem.url }}" alt="Imagem do Anúncio">
+            </div>
         </div>
-    </div>
 
-    <div class="sixteen wide column">
-        
-        <h2 class="ui header">Descrição</h2>
-        {% if anuncio.descricao %}
-        <p>{{ anuncio.descricao }}</p>
-        {% else %}
-        <p>Este anúncio não possui descrição.</p>
-        {% endif %}
+        <div class="sixteen wide column">
+            <h2 class="ui header">Descrição</h2>
+            {% if anuncio.descricao %}
+            <p>{{ anuncio.descricao }}</p>
+            {% else %}
+            <p>Este anúncio não possui descrição.</p>
+            {% endif %}
+        </div>
     </div>
 </div>
 

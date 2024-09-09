@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+
 User = get_user_model()
 
 class UserAdminCreationForm(forms.ModelForm):
@@ -44,7 +45,7 @@ class UserAdminChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['full_name', 'email', 'password', 'active', 'admin']
+        fields = ['full_name', 'email', 'password', 'is_active', 'admin']  # Corrigido para is_active
 
     def clean_password(self):
         # Regardless of what the user provides, return the initial value.
@@ -65,11 +66,19 @@ class RegisterForm(forms.ModelForm):
     fields, plus a repeated password.
     """
     password = forms.CharField(widget=forms.PasswordInput)
-    password_2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
+    password_2 = forms.CharField(label='Confirme Password', widget=forms.PasswordInput)
 
     class Meta:
         model = User
         fields = ['email']
+        
+    def clean_email(self):
+        """
+        Verifica se o e-mail já está cadastrado.
+        """
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError("Este e-mail já está cadastrado.")
 
     def clean(self):
         '''
@@ -79,14 +88,14 @@ class RegisterForm(forms.ModelForm):
         password = cleaned_data.get("password")
         password_2 = cleaned_data.get("password_2")
         if password is not None and password != password_2:
-            self.add_error("password_2", "Your passwords must match")
+            self.add_error("password_2", "Seu passwords devem ser iguais")
         return cleaned_data
 
     def save(self, commit=True):
         # Save the provided password in hashed format
         user = super(RegisterForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password"])
-        # user.active = False # send confirmation email
+        # user.is_active = False # send confirmation email
         if commit:
             user.save()
         return user

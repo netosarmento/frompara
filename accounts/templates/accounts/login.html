@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_old.html" %}
 {% load static %}
 <title>Login</title>
 
@@ -10,8 +10,16 @@
 {% block content %}
 <div class="container">
     <h2>Login</h2>
-    <form method='POST' action='{% url "login" %}'>
+    <form method='POST' action='{% url "login" %}' id="loginForm">
         {% csrf_token %}
+        
+        <!-- Mensagens de erro -->
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
         <div class="form-group">
             <input type="email" name="email" class="form-control _ge_de_ol" placeholder="Enter Email" required="" aria-required="true">
         </div>
@@ -27,12 +35,17 @@
                     Remember me
                 </label>
             </div>
-            <a href="#">Forgot Password</a>
+            <a href="{% url 'password_reset' %}">Forgot Password</a>
+        </div>
+
+        <div class="form-group text-center">
+            <!-- Confirm Button -->
+            <button type="button" class="btn btn-primary" id="confirmButton">Confirme que não é um Robô, Por favor.</button>
         </div>
 
         <div class="form-group">
             <div class="_btn_04">
-                <button type="submit" class="btn btn-default">Login</button>
+                <button type="submit" class="btn btn-default" id="loginButton" disabled>Login</button>
             </div>
         </div>
 
@@ -41,4 +54,14 @@
         </div>
     </form>
 </div>
+
+<script>
+document.getElementById('confirmButton').addEventListener('click', function() {
+    var loginButton = document.getElementById('loginButton');
+    loginButton.disabled = false;
+    this.disabled = true; // Disable the confirm button after confirming
+    this.textContent = 'Belezinha! Pode Logar!'; // Update button text
+});
+</script>
+
 {% endblock %}

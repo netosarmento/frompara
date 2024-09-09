@@ -10,6 +10,8 @@
 {% url 'quemsomos' as quemsomos_url %}
 {% url 'termos' as termos_url %}
 {% url 'politicas' as politicas_url %}
+{% url 'SAC' as SAC_url %}
+{% url 'fotografia' as fotografia_url %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -170,77 +172,102 @@ dialog {
   .menu-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     margin-top: 20px;
 }
+
 .menu-item {
+    font-family: Roboto, sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    font-family: Roboto, sans-serif;
 }
-.menu-item img {
-    width: 80px; /* Define a largura das imagens para 80px */
-    height: 80px; /* Define a altura das imagens para 80px */
-    object-fit: cover;
-    border-radius: 10px;
-}
-.nav-link {
+
+.menu-item a {
+    text-decoration: none;
     color: inherit;
-    text-decoration: none;
-    margin-top: 5px;
+    padding: 10px 15px;
+    transition: color 0.3s;
 }
-.nav-link:hover {
-    color: inherit; /* Mantém a cor do texto ao passar o mouse */
+
+.menu-item a:hover {
+    color: #333; /* Cor ao passar o mouse */
 }
-.no-underline {
-    text-decoration: none;
-}
-.text-link {
-    text-decoration: none;
-    color: inherit; /* Mantém a cor do texto */
-    cursor: pointer; /* Adiciona o cursor de link ao passar o mouse */
-}
-.div-8, .div-9, .div-10, .div-13, .div-26, .div-27, .div-28 {
-    font-family: Roboto, sans-serif;
-}
-.div-11, .div-12, .div-14 {
-    display: flex;
-    gap: 20px;
-    margin-top: 13px;
-    justify-content: center;
-}
-.div-12 {
-    gap: 3px;
-    color: #000;
-}
-.div-17 {
-    border-radius: 10px;
-    border-color: rgba(52, 58, 64, 1);
-    border-style: solid;
-    border-width: 4px;
-    background-color: #fff;
-    margin-top: 71px;
-    color: #000;
-    padding: 12px 16px;
-    font: 400 16px/100% Inter, sans-serif;
-}
-@media (max-width: 991px) {
-    .div-11, .div-12, .div-14, .div-17 {
-        white-space: initial;
-    }
-    .div-17 {
-        max-width: 100%;
-        margin-top: 40px;
-    }
-}
-.img-5 {
+
+.menu-item img {
+    width: 21px;
     aspect-ratio: 1;
     object-fit: auto;
     object-position: center;
-    width: 21px;
+    margin-right: 5px;
 }
+
+.text-background {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.active a {
+    color: #007bff; /* Cor do link ativo */
+}
+
+.navbar-cart-count {
+    margin-right: 5px;
+}
+
+
+.div-17 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 600px; /* Limita a largura máxima da barra de pesquisa */
+  margin-bottom: 20px; /* Espaçamento abaixo da barra de pesquisa */
+}
+
+.search-form .input-group {
+  width: 100%;
+}
+
+.search-form .form-control {
+  width: 100%;
+}
+
+.div-17 h1 {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif; /* Define a fonte como Roboto */
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .div-17 {
+      padding: 10px;
+  }
+
+  .div-17 h1 {
+      font-size: 20px;
+  }
+}
+
+
+
+
+
+
 .div-68 {
   background-color: var(--Azul_geral, #343a40);
   display: flex;
@@ -273,6 +300,8 @@ dialog {
   max-width: 100%;
 }
 
+
+
 </style>
 <header>
   <dialog id="termsModal">
@@ -294,16 +323,21 @@ dialog {
 <div class="div-2">
    <div class="div-3">
      <div class="div-4">
-       <img
-         loading="lazy"
-         src="https://cdn.builder.io/api/v1/image/assets/TEMP/eecb9f19c05d6b706e298f259601f5e2b559df8677d5a886595b8277738fbfb0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-         class="img"
-       />
+      <!-- Instagram Logo-->
+      <a href="https://www.instagram.com/fromparaofc?igsh=MWxwdnVlbWtndXJnNw==">
+      <img
+      loading="lazy"
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/eecb9f19c05d6b706e298f259601f5e2b559df8677d5a886595b8277738fbfb0?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
+      class="img"
+       /></a>
+      <!-- Facebook-->
+      <a href="#">
        <img
          loading="lazy"
          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c773fca5f1332271a0dd892f5a25a16b2944403dd262e1659a90b19633b35391?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
          class="img-2"
-       />
+         alt= "Instagram"
+       /></a>
      </div>
      <img
        loading="lazy"
@@ -321,74 +355,78 @@ dialog {
      />
      <div class="div-7">
        
-   
-      <div class="div-8 {% if request.path == home_url %}active{% endif %}">
-        <a href="{{ home_url }}" class="nav-link text-link px-2 text-body-secondary no-underline">Home</a>
-     </div>
-     <div class="div-9 {% if request.path == contact_url %}active{% endif %}">
-         <a href="{{ contact_url }}" class="nav-link text-link px-2 text-body-secondary no-underline">Contato</a>
-     </div>
-     <div class="div-10 {% if request.path == products_list_url %}active{% endif %}">
-         <a href="{{ products_list_url }}" class="nav-link text-link px-2 text-body-secondary no-underline">Produtos</a>
-     </div>
+
+        <div class="menu-container">
+            <div class="menu-item {% if request.path == home_url %}active{% endif %}">
+                <a href="{{ home_url }}" class="nav-link text-link px-2 text-body-secondary no-underline">Home</a>
+            </div>
+            <div class="menu-item {% if request.path == products_list_url %}active{% endif %}">
+                <a href="{{ products_list_url }}" class="nav-link text-link px-2 text-body-secondary no-underline">Produtos</a>
+            </div>
+            <div class="menu-item {% if request.path == contact_url %}active{% endif %}">
+                <a href="{{ contact_url }}" class="nav-link text-link px-2 text-body-secondary no-underline">Contato</a>
+            </div>
+            {% if request.user.is_authenticated %}
+                <div class="menu-item {% if request.path == logout_url %}active{% endif %}">
+                    <a href="{{ logout_url }}" class="nav-link px-2 text-body-secondary no-underline">Logout</a>
+                </div>
+            {% else %}
+                <div class="menu-item {% if request.path == login_url %}active{% endif %}">
+                    <a href="{{ login_url }}?next={{ request.path }}" class="nav-link px-2 text-body-secondary no-underline text-background">Login</a>
+                </div>
+                <div class="menu-item {% if request.path == register_url %}active{% endif %}">
+                    <a href="{{ register_url }}" class="nav-link px-2 text-body-secondary no-underline text-background">Registrar-se</a>
+                </div>
+            {% endif %}
+            <div class="menu-item {% if request.path == cart_url %}active{% endif %}">
+                <a href="{{ cart_url }}" class="nav-link px-2 text-body-secondary no-underline">
+                    <img loading="lazy" src="{% static 'img/cart.svg' %}" class="img-5" />
+                    <span class="navbar-cart-count">{{ request.session.cart_items }}</span>
+                    Carrinho
+                </a>
+            </div>
+        </div>
     </header>
-     <div class="div-11">
-         <div class="div-12">
-             <img
-                 loading="lazy"
-                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab9afa3ed2f0946ea50b6a732f0e1bb23f6090735a7250dec0da612a5c8d3c57?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
-                 class="img-5"
-             />
-             <div class="div-13{% if request.path == cart_url %} active {% endif %}">
-                 <a href="{{ cart_url }}" class="nav-link px-2 text-body-secondary no-underline">
-                     <span class="navbar-cart-count">{{ request.session.cart_items }}</span>
-                     <i class="fa fa-shopping-cart"></i>Carrinho
-                 </a>
-             </div>
-             <div class="div-14">
-                 {% if request.user.is_authenticated %}
-                     <div class="div-26 {% if request.path == logout_url %}active{% endif %}">
-                         <a href="{{ logout_url }}" class="nav-link px-2 text-body-secondary no-underline">Logout</a>
-                     </div>
-                 {% else %}
-                     <div class="div-27 {% if request.path == login_url %}active{% endif %}">
-                         <a href="{{ login_url }}?next={{ request.path }}" class="nav-link px-2 text-body-secondary no-underline">Login</a>
-                     </div>
-                     <div class="div-28 {% if request.path == register_url %}active{% endif %}">
-                         <a href="{{ register_url }}" class="nav-link px-2 text-body-secondary no-underline">Registrar-se</a>
-                     </div>
-                 {% endif %}
-             </div>
-             <div class="div-17">
-                 <form method="GET" action="{% url 'search:query' %}" class="form my-2 my-lg-0 search-form">
-                     <div class="input-group">
-                         <input class="form-control" type="search" placeholder="Pesquisar" name="q" aria-label="Search" value="{{ request.GET.q }}">
-                     </div>
-                 </form>
-             </div>
-         </div>
-     </div>
+    
+    <div class="div-17">
+      <form method="GET" action="{% url 'search:query' %}" class="form my-2 my-lg-0 search-form">
+        <div class="input-group">
+            <input class="form-control" type="search" placeholder="Pesquisar" name="q" aria-label="Search" value="{{ request.GET.q }}">
+            <select class="form-select" name="type" aria-label="Search Type">
+                <option value="products" {% if request.GET.type == "products" %}selected{% endif %}>Produtos</option>
+                <option value="anuncios" {% if request.GET.type == "anuncios" %}selected{% endif %}>Anúncios</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Pesquisar</button>
+        </div>
+    </form>        
+      <h1>Conheça o Pará</h1>
+  </div>
+    
+
+             
+           
+
      
      <nav class="container menu-container">
          <div class="menu-item">
              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/87b2ef4419242ac8fd9b6fcd29ea74c4cc867f9ed623ee172d700a81903345b2?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&" alt="Bares e Restaurantes">
-             <a href="http://3.144.18.56:8000/categoria/1/" class="nav-link px-2 text-body-secondary no-underline">Bares & Restaurantes</a>
+             <a href="http://www.frompara.com.br/categoria/4/" class="nav-link px-2 text-body-secondary no-underline">Bares & Restaurantes</a>
          </div>
          <div class="menu-item">
              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3881496d74507f609d9dd5ec34dec6f94dccdb3de73e76f910f75fa0251f59f4?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&" alt="Cidades">
-             <a href="http://3.144.18.56:8000/categoria/3/" class="nav-link px-2 text-body-secondary">Cidades</a>
+             <a href="http://www.frompara.com.br/categoria/6/" class="nav-link px-2 text-body-secondary">Cidades</a>
          </div>
          <div class="menu-item">
              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/767e2a1e072a7bd6186e836136e4cc5527d38faa655bdb581ff142346c42be5d?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&" alt="LGBT+">
-             <a href="http://3.144.18.56:8000/categoria/9/" class="nav-link px-2 text-body-secondary">LGBT+</a>
+             <a href="http://www.frompara.com.br/categoria/2/" class="nav-link px-2 text-body-secondary">LGBT+</a>
          </div>
          <div class="menu-item">
              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f9b48edaf0205effa2ecdc75909e36a69a927d6c7a499779a11d7fc3af7ffa4c?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&" alt="Praias">
-             <a href="http://3.144.18.56:8000/categoria/5/" class="nav-link px-2 text-body-secondary">Praias</a>
+             <a href="http://www.frompara.com.br/categoria/5/" class="nav-link px-2 text-body-secondary">Praias</a>
          </div>
          <div class="menu-item">
              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ce7fbebb89dec607f8971af8f258461c36df88eed8246d3db857164b3055c530?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&" alt="Pontos Turísticos">
-             <a href="http://3.144.18.56:8000/categoria/4/" class="nav-link px-2 text-body-secondary">Pontos Turísticos</a>
+             <a href="http://www.frompara.com.br/categoria/1/" class="nav-link px-2 text-body-secondary">Pontos Turísticos</a>
          </div>
      </nav>
 
@@ -532,7 +570,7 @@ dialog {
             <a href="{{ politicas_url }}" class="nav-link text-link no-underline" style="color: white; font: 700 16px 'Roboto', sans-serif;">Politica de Privacidade
             <br />
             <br />
-            <a href="URL_DO_FALE_CONOSCO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Fale conosco</a>
+            <a href="{{ SAC_url }}" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Fale conosco</a>
             <br />
             <br />
             <a href="{{ termos_url }}" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Termos de Uso</a>
@@ -540,36 +578,36 @@ dialog {
         </div>
         <div class="column-2">
           <div class="div-73">
-            <a href="http://3.144.18.56:8000/categoria/1/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Bares e Restaurantes</a>
+            <a href="http://www.frompara.com.br/categoria/4/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Bares e Restaurantes</a>
             <br />
             <br />
-            <a href="http://3.144.18.56:8000/categoria/3/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Cidades</a>
+            <a href="http://www.frompara.com.br/categoria/6/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Cidades</a>
             <br />
             <br />
-            <a href="http://3.144.18.56:8000/categoria/5/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Praias</a>
+            <a href="http://www.frompara.com.br/categoria/5/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Praias</a>
             <br />
             <br />
-            <a href="http://3.144.18.56:8000/categoria/9/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">LGBTQI+</a>
+            <a href="http://www.frompara.com.br/categoria/2/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">LGBTQI+</a>
             <br />
             <br />
-            <a href="http://3.144.18.56:8000/categoria/4/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Pontos Turísticos</a>
+            <a href="http://www.frompara.com.br/categoria/1/" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Pontos Turísticos</a>
           </div>
         </div>
         <div class="column-3">
           <div class="div-74">
-            <a href="URL_SEJA_UM_PARCEIRO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Seja um parceiro</a>
+            <a href="{{ contact_url }}" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Seja um parceiro</a>
             <br />
             <br />
-            <a href="URL_FACA_UMA_AVALIACAO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Faça uma avaliação</a>
+            <a href="{{ fotografia_url }}" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Fotografia, Agradecimentos</a>
             <br />
             <br />
-            <a href="URL_PERFIL_PROPRIETARIO" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Perfil de Proprietário</a>
+            <a href="http://www.technortesolucoes.com.br" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Desenvolvimento Tech Norte Soluções</a>
             <br />
             <br />
-            <a href="URL_CRIE_UM_LUGAR" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Crie um lugar</a>
+            <a href="URL_CRIE_UM_LUGAR" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;"></a>
             <br />
             <br />
-            <a href="URL_REINVIDIQUE_UM_LUGAR" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;">Reivindique um lugar</a>
+            <a href="URL_REINVIDIQUE_UM_LUGAR" class="nav-link text-link no-underline" style="color: inherit; font: 700 16px 'Roboto', sans-serif;"></a>
           </div>
         </div>
       </div>

@@ -20,20 +20,41 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Setup environment variables
 env = environ.Env(DEBUG=(bool, False),)
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'xjmv-0^l__duq4-xp54m94bsf02lx4&1xka_ykd_(7(5#9^1o^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
+ALLOWED_HOSTS = ['*']
+# outras configuraçoes
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 3600
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_PRELOAD = True
 # Stripe Configuration
-stripe.api_key = env('STRIPE_API_KEY')
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')  # Chave secreta
+STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')  # Chave pública
+#STRIPE_WEBhook = env('STRIPE_WEBhook') #WebHook
+# Ensure you configure this setting to match your project structure
+stripe.api_key = STRIPE_PUBLIC_KEY
+
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
+
+# Configurações de E-mail
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_PORT = env.int('EMAIL_PORT')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+
 
 # Application definition
 
@@ -56,6 +77,7 @@ INSTALLED_APPS = [
     'search',
     'tags',
     'anuncios',
+    'payment',
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

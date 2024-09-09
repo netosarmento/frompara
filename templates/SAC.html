@@ -1,0 +1,196 @@
+{% load static %}
+{% url 'home' as home_url %}
+{% url 'termos' as termos_url %}
+{% url 'politicas' as politicas_url %}
+<title>Quem Somos</title>
+<html lang="pt-br">
+<meta charset="utf-8">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1 " />
+{% block base_head %}
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/estilos.css"> -->
+  {% endblock %}    
+<style>
+    .back-arrow {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 24px;
+      }
+    
+    body {
+        min-width: 372px;
+    }
+    
+    
+    p.truncar-3l {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    @media screen and (max-width: 469px) {
+        .mt-xs-3 {
+            margin-top: 1rem;
+        }
+    }
+    
+    label:hover .text-dark {
+        transition: color 0.2s ease;
+        color: white !important;
+    }
+    
+    label .text-dark {
+        transition: color 0.2s ease;
+    }
+    
+    /* complementado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+    .btn-check:checked+.btn-outline-danger h3,
+    .btn-check:active+.btn-outline-danger h3,
+    .btn-check:hover+.btn-outline-danger h3,
+    .btn-check:checked+.btn-outline-danger hr,
+    .btn-check:active+.btn-outline-danger hr,
+    .btn-check:hover+.btn-outline-danger hr,
+    .btn-check:checked+.btn-outline-danger h4,
+    .btn-check:active+.btn-outline-danger h4,
+    .btn-check:hover+.btn-outline-danger h4,
+    .btn-check:checked+.btn-outline-danger p,
+    .btn-check:active+.btn-outline-danger p,
+    .btn-check:hover+.btn-outline-danger p,
+    .btn-check:checked+.btn-outline-danger .text-dark,
+    .btn-check:active+.btn-outline-danger .text-dark,
+    .btn-check:hover+.btn-outline-danger .text-dark {
+        transition: color 0.2s ease;
+        color: white !important;
+    }
+    
+    /* adicionado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+    .btn-check:checked+.btn-outline-danger,
+    .btn-check:active+.btn-outline-danger,
+    .btn-check:hover+.btn-outline-danger {
+        transition: background-color 0.2s ease;
+        background-color: var(--bs-danger) !important;
+    }
+    
+    .flex-even {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .accordion-button:not(.collapsed) {
+        color: white;
+        background-color: #dc3545;
+    }
+    
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    
+    fieldset.row .form-floating>label {
+        margin-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+    
+    /* adicionado para deixar links de paginação em vermelho */
+    .page-link {
+        color: var(--bs-danger);
+    }
+</style>
+<header>
+    <div class="back-arrow">
+        <a href="{{ home_url }}" class="text-link no-underline" style="color: black;">
+          &#8592; <!-- Código HTML para a seta esquerda -->
+        </a>
+      </div>
+</header>
+  
+<body>
+    
+
+        <main class="flex-fill">
+            <div class="container" style="display: flex; justify-content: center; align-items: center;height: 10vh;"></div>
+                <h1>Serviço de Atendimento ao Cliente: SAC</h1>
+                <hr>
+                <p>Aqui na FromPara, valorizamos a transparência e o respeito aos direitos dos nossos consumidores. É fundamental que você saiba que é protegido pelo Código de Defesa do Consumidor (CDC), instituído pela Lei nº 8.078, de 11 de setembro de 1990. Este código estabelece normas de proteção e defesa do consumidor, garantindo que você tenha acesso a informações claras e precisas sobre os produtos e serviços que oferecemos.</p>
+                <ul>
+                <li><strong>Direito à Informação:</strong> Você tem o direito de receber informações claras e objetivas sobre os produtos e serviços, incluindo preços, características, prazos de entrega e eventuais riscos à saúde e segurança.</li>
+                <li><strong>Direito à Escolha:</strong> É seu direito escolher livremente os produtos e serviços que melhor atendem às suas necessidades.</li>
+                <li><strong>Direito à Segurança:</strong> Você tem o direito de consumir produtos e serviços que não lhe causem danos à saúde ou à segurança.</li>
+                <li><strong>Direito ao Respeito:</strong> Seus direitos devem ser respeitados, e você deve ser tratado com dignidade e respeito.</li>
+                <li><strong>Direito à Educação:</strong> Você tem o direito de ser educado e informado sobre o consumo adequado dos produtos e serviços.</li>
+                <li><strong>Direito à Prevenção e Reparação de Danos:</strong> Em caso de danos, você tem o direito de ser reparado e de ter acesso a mecanismos que previnam novos danos.</li>
+               </ul>
+                <p>
+                    Entre em Contato Conosco</p>            
+                    <p>Se você tiver alguma dúvida, reclamação ou precisar de informações adicionais sobre nossos produtos e serviços, por favor, não hesite em entrar em contato conosco. Estamos aqui para ajudar e garantir que sua experiência com a FromPara seja a melhor possível.</p>
+
+                    <h4>SAC Contatos:</h4>
+                    <ul>
+                        <li><strong>Telefone:</strong> 
+                            <a href="https://wa.me/5591985008092" class="text-decoration-none text-dark">(91) 98500-8092</a>
+                        </li>
+                        <li><strong>E-mail:</strong> <a href="mailto:email@dominio.com" class="text-decoration-none text-dark">email@dominio.com</a></li>
+                    </ul>
+                    
+                </p>
+            </div>
+        </main>
+        
+
+        
+        
+    
+        
+        
+        
+        
+        
+        
+
+
+
+
+        <footer class="border-top text-muted bg-light">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-12 col-md-4 text-center">
+                        FromPara &copy; 2024<br>
+                        Loja Virtual, Belém/PA <br>
+                        CPNJ 54.684.102/0001-00
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="{{ politicas_url }}" class="text-decoration-none text-dark">
+                            Política de Privacidade
+                        </a><br>
+                        <a href="{{ termos_url }}" class="text-decoration-none text-dark">
+                            Termos de Uso
+                        </a><br>
+                        <a href="/quemsomos.html" class="text-decoration-none text-dark">
+                        -----------------------
+                        </a><br>
+                        <a href="{{ home_url }}" class="text-decoration-none text-dark">
+                            Voltar a Home
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="/contato.html" class="text-decoration-none text-dark">
+                            SAC Contatos:
+                        </a><br>
+                        E-mail: <a href="mailto:email@dominio.com" class="text-decoration-none text-dark">
+                            email@dominio.com
+                        </a><br>
+                        Telefone: <a href="https://wa.me/5591985008092" class="text-decoration-none text-dark">
+                            (91) 98500-8092
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+   <!-- <script src=""></script> -->
+</body>
+
+</html>

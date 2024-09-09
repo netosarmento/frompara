@@ -35,11 +35,11 @@
           class="img-11"
         />
         <div class="div-31">
-          <div class="div-32">Rio Tapajós</div>
+          <div class="div-32">Conheça nossa História e Cultura</div>
           <div class="div-33">
-            Santarém e Alter do Chão são algumas das cidades banhadas
+            Saber sobre nosso patrimônio histórico,
             <br />
-            por esse rio com atrações naturais imperdíveis
+            saber tudo que o Pará, pode oferecer.
           </div>
         </div>
       </div>
@@ -47,16 +47,16 @@
       <div class="slide">
         <img src='{% static "img/barco-rio3.jpg" %}' class="img-11">
         <div class="div-31">
-          <div class="div-32">Titulo verificando como vai ficar</div>
-          <div class="div-33">Descrição do Logoplaca muito legal de divulgaçao</div>
+          <div class="div-32">Venha Conhecer o Pará</div>
+          <div class="div-33">Dispomos de sabores únicos, venha experimentar.</div>
         </div>
       </div>
   
       <div class="slide">
         <img src='{% static "img/CAM.jpg" %}' class="img-11">
         <div class="div-31">
-          <div class="div-32">FromPara</div>
-          <div class="div-33">Descrição do FromPara nova imagem ilustrativa</div>
+          <div class="div-32">Venha para o norte, conhecer o Pará</div>
+          <div class="div-33">Veja os pontos turisticos</div>
         </div>
       </div>
     </div>
@@ -70,42 +70,46 @@
   
 
 
-    <div class="div-38">Pra quem quer se divertir gastando pouco</div>
-    <div class="div-39">Rolês até 50 reais</div>
+    <div class="div-38">Para ajudar a todos que querem conhecer o Pará, e para os que ja conhecem, mas querem saber mais.</div>
+    <div class="div-39">O turismo amazônico no Pará é uma experiência única que permite aos visitantes explorar a rica biodiversidade e as cultura da região nortista. Com suas florestas exuberantes, rios majestosos e uma fauna impressionante, a Amazônia oferece aventuras inesquecíveis, como trilhas na selva, passeios de barco e a observação de animais selvagens. No Pará, os turistas podem visitar locais icônicos como a cidades como Belém, Castanhal, Mosqueiro, Salinas, Marabá, Paragominas, Acará, entre outras. Pará famoso por sua culinária exótica, incluindo o açaí e o tacacá. Os mercados locais, como o Ver-o-Peso, proporcionam uma imersão na cultura amazônica. Além disso, as comunidades indígenas e ribeirinhos oferecem a oportunidade de aprender sobre tradições ancestrais e práticas sustentáveis. A hospitalidade dos habitantes locais torna a visita ainda mais especial. O turismo na Amazônia não apenas enriquece a experiência do viajante, mas também contribui para a preservação ambiental e o desenvolvimento das comunidades. Em suma, visitar a Amazônia e o Pará é uma chance de se conectar com a natureza e a cultura de uma das regiões mais fascinantes do mundo..</div>
     
     <div class="div-40">
       {% for anuncio in anuncios|slice:"6" %}
         <div class="div-41">
           <img
             loading="lazy"
-            srcset="{{ anuncio.imagem.url }}?width=100 100w, {{ anuncio.imagem.url }}?width=200 200w, {{ anuncio.imagem.url }}?width=400 400w, {{ anuncio.imagem.url }}?width=800 800w, {{ anuncio.imagem.url }}?width=1200 1200w, {{ anuncio.imagem.url }}?width=1600 1600w, {{ anuncio.imagem.url }}?width=2000 2000w, {{ anuncio.imagem.url }}"
+            srcset="{{ anuncio.imagem.url }}?width=600 600w, {{ anuncio.imagem.url }}?width=1200 1200w, {{ anuncio.imagem.url }}?width=1800 1800w, {{ anuncio.imagem.url }}"
+            sizes="(max-width: 600px) 100vw, (max-width: 991px) 50vw, 33vw"
+            src="{{ anuncio.imagem.url }}"
             class="img-13"
           />
           <div class="div-42">
             <a href="{% url 'anuncio' anuncio.id %}" class="text-link">{{ anuncio.titulo }}</a>
           </div>
-          <div class="div-43">{{ anuncio.descricao }}</div>
+          <div class="description">{{ anuncio.descricao }}<br /><a href="{% url 'anuncio' anuncio.id %}" class="read-more-link">Leia mais...</a></div>
           <div class="div-44">#conhecernorte #Para #FromPara</div>
         </div>
       {% endfor %}
     </div>
+    
+
+    
     
     <img
       loading="lazy"
       srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/473ed91064f937af070527f439856a6f0da8879a69029713fe8871e8d2cd0104?apiKey=704fd2a8815a4a4c9cb4bd7eff273baf&"
       class="img-20"
     />
-    
-    
-    
-    
-      
-    
-    
-
-
-      
-  </div>
+ </div>
+ {% if request.user.is_authenticated %}
+                <div class="centered-text">
+                    <h1>Área FromPara:</h1>
+                    <p>{{ premium_content }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
   
     <!-- jQuery and Bootstrap Bundle with Popper -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+5RA4g1EppNK5Rx8+2qc1OwH/CmAKjdj3HPt/msVJ6+oZfo" crossorigin="anonymous"></script>

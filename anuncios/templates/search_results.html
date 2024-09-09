@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Resultados da Pesquisa</h1>
+        
+        {% if query %}
+            <p>Resultados para: <strong>{{ query }}</strong></p>
+        {% endif %}
+        
+        {% if anuncios %}
+            <div class="row">
+                {% for anuncio in anuncios %}
+                    <div class="col">
+                        <div class="card">
+                            {% if anuncio.imagem %}
+                                <img src="{{ anuncio.imagem.url }}" class="card-img-top" alt="{{ anuncio.titulo }}">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ anuncio.titulo }}</h5>
+                                <p class="card-text">{{ anuncio.descricao }}</p>
+                                <p class="card-text"><small class="text-muted">Categoria: {{ anuncio.categoria.titulo }}</small></p>
+                                <p class="card-text"><small class="text-muted">Criado em: {{ anuncio.criado_em|date:"d/m/Y" }}</small></p>
+                                <a href="{% url 'anuncio' anuncio.id %}" class="btn btn-primary">Leia mais...</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Nenhum resultado encontrado.</p>
+        {% endif %}
+    </div>
+{% endblock content %}

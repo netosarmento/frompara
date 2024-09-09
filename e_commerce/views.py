@@ -12,10 +12,14 @@ def is_ajax(request):
 def home_page(request):
     categorias = Categoria.objects.all()
     ultimos_anuncios = Anuncio.objects.all()[:6]
+    context = {
+        'categorias': categorias,
+        'anuncios': ultimos_anuncios,
+    }
     if request.user.is_authenticated:
-        context['premium_content'] = 'Você é um usuário Premium'
-    return render(request, 'home_page.html', {'categorias': categorias,
-                                         'anuncios': ultimos_anuncios})
+        context['premium_content'] = 'Você é um Membro FromPara'
+    return render(request, 'home_page.html', context)
+
 
     
 def about_page(request):
@@ -28,14 +32,14 @@ def about_page(request):
 def contact_page(request):
     contact_form = ContactForm(request.POST or None)
     context = {
-                    "title": "Página de Contatos Oficial.",
+                    "title": "Página de Contato Oficial.",
                     "content": "Bem vindo a página de contato FromPara, aqui deixe seu contato, para dar pedir informaçoes, dar sugestões ou se busca parcerias.",
                     "form": contact_form	
               }
     if contact_form.is_valid():
         print(contact_form.cleaned_data)
         if is_ajax(request):
-            return JsonResponse({"message": "Obrigado!"})
+            return JsonResponse({"message": "Obrigado! Agradecemos seu contato, logo retornaremos."})
     if contact_form.errors:
         errors = contact_form.errors.as_json()
         if is_ajax(request):
@@ -80,3 +84,11 @@ def politicas(request):
 def termos(request):
     
     return render(request, 'termos.html')
+
+def SAC(request):
+    
+    return render(request, 'SAC.html')
+
+def fotos(request):
+    
+    return render (request, 'fotografia.html')

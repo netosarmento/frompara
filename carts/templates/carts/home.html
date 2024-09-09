@@ -1,11 +1,24 @@
-{% extends "base.html" %}
+{% extends "base_old.html" %}
 {% block content %}
-  <h1>Cart</h1>
+{% if not request.user.is_authenticated %}
+<div class='col-12 col-md-6'>
+    <p class='lead'>Você precisa estar logado para fazer o compras.</p>
+    {% csrf_token %} 
+            <p class='lead'>Login</p>
+            {% include 'accounts/snippets/form.html' with form=login_form next_url=request.build_absolute_uri %}
+        </div>
+        <div class='col-12 col-md-6'> 
+            <p>Continuar como Convidado</p>
+            {% url "guest_register" as guest_register_url %}
+            {% include 'accounts/snippets/form.html' with form=guest_form next_url=request.build_absolute_uri action_url=guest_register_url %}
+        </div>
+        {% endif %}
+<h1>Carrinho</h1>
   {% if cart.products.exists %}
   <table class="table cart-table">
     <thead>
       <tr>
-        <th>#</th>
+        <th>FromPara</th>
         <th>Nome</th>
         <th>Preço</th>
       </tr>

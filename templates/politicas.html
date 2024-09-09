@@ -1,0 +1,193 @@
+{% load static %}
+{% url 'home' as home_url %}
+{% url 'termos' as termos_url %}
+{% url 'politicas' as politicas_url %}
+<title>Politicas</title>
+<html lang="pt-br">
+<meta charset="utf-8">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1 " />
+{% block base_head %}
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/estilos.css"> -->
+  {% endblock %}    
+<style>
+    .back-arrow {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 24px;
+      }
+    
+    body {
+        min-width: 372px;
+    }
+    
+    
+    p.truncar-3l {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    @media screen and (max-width: 469px) {
+        .mt-xs-3 {
+            margin-top: 1rem;
+        }
+    }
+    
+    label:hover .text-dark {
+        transition: color 0.2s ease;
+        color: white !important;
+    }
+    
+    label .text-dark {
+        transition: color 0.2s ease;
+    }
+    
+    /* complementado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+    .btn-check:checked+.btn-outline-danger h3,
+    .btn-check:active+.btn-outline-danger h3,
+    .btn-check:hover+.btn-outline-danger h3,
+    .btn-check:checked+.btn-outline-danger hr,
+    .btn-check:active+.btn-outline-danger hr,
+    .btn-check:hover+.btn-outline-danger hr,
+    .btn-check:checked+.btn-outline-danger h4,
+    .btn-check:active+.btn-outline-danger h4,
+    .btn-check:hover+.btn-outline-danger h4,
+    .btn-check:checked+.btn-outline-danger p,
+    .btn-check:active+.btn-outline-danger p,
+    .btn-check:hover+.btn-outline-danger p,
+    .btn-check:checked+.btn-outline-danger .text-dark,
+    .btn-check:active+.btn-outline-danger .text-dark,
+    .btn-check:hover+.btn-outline-danger .text-dark {
+        transition: color 0.2s ease;
+        color: white !important;
+    }
+    
+    /* adicionado para compatibilizar com Bootstrap >5.3.x mantendo o mesmo efeito de hover */
+    .btn-check:checked+.btn-outline-danger,
+    .btn-check:active+.btn-outline-danger,
+    .btn-check:hover+.btn-outline-danger {
+        transition: background-color 0.2s ease;
+        background-color: var(--bs-danger) !important;
+    }
+    
+    .flex-even {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .accordion-button:not(.collapsed) {
+        color: white;
+        background-color: #dc3545;
+    }
+    
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    
+    fieldset.row .form-floating>label {
+        margin-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+    
+    /* adicionado para deixar links de paginação em vermelho */
+    .page-link {
+        color: var(--bs-danger);
+    }
+</style>
+<header>
+    <div class="back-arrow">
+        <a href="{{ home_url }}" class="text-link no-underline" style="color: black;">
+          &#8592; <!-- Código HTML para a seta esquerda -->
+        </a>
+      </div>
+</header>
+  
+<body>
+    
+
+        <main class="flex-fill">
+            <div class="container" style="display: flex; justify-content: center; align-items: center;height: 10vh;"></div>
+            <h1>Política de Privacidade</h1>
+            <hr>
+            <h2>1. Introdução</h2>
+            <p>Nossa Política de Privacidade visa estabelecer as regras e diretrizes para a coleta, uso e armazenamento de dados pessoais, em conformidade com a LGPD.</p>
+    
+            <h2>2. Coleta de Dados</h2>
+            <p>Coletamos dados pessoais para melhorar nossos serviços e proporcionar uma melhor experiência para nossos usuários. Os dados coletados podem incluir, mas não se limitam a, nome, e-mail e telefone.</p>
+    
+            <h2>3. Uso de Dados</h2>
+            <p>Usamos dados pessoais para melhorar nossos serviços, fornecer suporte ao cliente e enviar comunicações de marketing.</p>
+    
+            <h2>4. Armazenamento de Dados</h2>
+            <p>Armazenamos dados pessoais de forma segura e apenas acessamos quando necessário.</p>
+    
+            <h2>5. Compartilhamento de Dados</h2>
+            <p>Não compartilhamos dados pessoais com terceiros, exceto em casos em que seja necessário para o funcionamento adequado da nossa plataforma ou por obrigação legal.</p>
+    
+            <h2>6. Direitos do Usuário</h2>
+            <p>6.1. O usuário tem o direito de:</p>
+            <ul>
+                <li>Acessar, controlar, retificar, limitar e se opor ao processamento de seus dados;</li>
+                <li>Solicitar a exclusão de seus dados pessoais;</li>
+                <li>Contestar o uso de seus dados entrando em contato com os administradores da nossa plataforma.</li>
+            </ul>
+    
+            <h2>7. Consentimento</h2>
+            <p>Ao usar nosso site e plataforma, o usuário concede seu consentimento prévio à coleta, uso e armazenamento de seus dados pessoais, salvo indicação em contrário.</p>
+    
+            <h2>8. Vigência</h2>
+            <p>Com sua privacidade e sua proteção de dados, esta Política de Privacidade entrou em vigor em 2 de novembro de 2022.</p>
+    
+            <p>Nossa visão é tornar o Pará um destino turístico de referência no Brasil e no mundo, conhecido por sua riqueza cultural, histórica e natural. E estamos trabalhando arduamente para tornar essa visão uma realidade.</p>
+        </div>
+        </main>
+
+        <footer class="border-top text-muted bg-light">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-12 col-md-4 text-center">
+                        FromPara &copy; 2024<br>
+                        Loja Virtual, Belém/PA <br>
+                        CPNJ 54.684.102/0001-00
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="{{ politicas_url }}" class="text-decoration-none text-dark">
+                            Política de Privacidade
+                        </a><br>
+                        <a href="{{ termos_url }}" class="text-decoration-none text-dark">
+                            Termos de Uso
+                        </a><br>
+                        <a href="/quemsomos.html" class="text-decoration-none text-dark">
+                            -----------------------
+                        </a><br>
+                        <a href="{{ home_url }}" class="text-decoration-none text-dark">
+                            Voltar a Home
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="/contato.html" class="text-decoration-none text-dark">
+                            SAC Contatos:
+                        </a><br>
+                        E-mail: <a href="mailto:sacfrompara@outlook.com" class="text-decoration-none text-dark">
+                            sacfrompara@outlook.com
+                        </a><br>
+                        Telefone: <a href="https://wa.me/5591985008092" class="text-decoration-none text-dark">
+                            (91) 98500-8092
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+   <!-- <script src=""></script> -->
+</body>
+
+</html>
+
+
+    

@@ -1,31 +1,43 @@
 {% extends "base.html" %}
+
 {% block content %}
-    <div class='row mb-3'>
-    {% if query %}
-    <div class='col 12'>
-        Resultado para <b>{{ query }}</b>
-        <hr />
-    </div>
-    {% else %}
-    <div class='col-12 col-md-8 mx-auto py-5'>
-        {% include 'search/snippets/search-form.html' %}
-    </div>
-    <div class='col-12'>
-        <hr>
-    </div>
-    {% endif %}
-    </div>
-    <div class='row'>
-        {% for obj in object_list %}
-            <div class='col'>
-            {% include 'products/snippets/card.html' with instance=obj %}
-            {% if forloop.counter|divisibleby:3 %}
-                </div><!--close the row--></div><!--close the col--><div class='row'><div class='col-12'><hr/></div>
-            {% elif forloop.counter|divisibleby:2 %}
-                </div><!--close the row--></div><!--close the col--><div class='row'><div class='col-12'><hr/></div>
-            {% else %}
-                </div>
-            {% endif%}
-        {% endfor%}
+    <div class="container">
+        <h1>Resultados da Pesquisa</h1>
+        
+        {% if query %}
+            <p>Resultados para: <strong>{{ query }}</strong></p>
+        {% endif %}
+        
+        {% if products %}
+            <h2>Produtos</h2>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-md-4">
+                        {% include 'products/snippets/card.html' with instance=product %}
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        {% if anuncios %}
+            <h2>Anúncios</h2>
+            <div class="row">
+                {% for anuncio in anuncios %}
+                    <div class="col-md-4">
+                        {% include 'anuncios/snippets/card.html' with instance=anuncio %}
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        {% if not products and not anuncios %}
+            <p>Nenhum resultado encontrado.</p>
+        {% endif %}
     </div>
 {% endblock content %}

@@ -1,10 +1,10 @@
 from django.urls import path
+from .views import SearchProductView, SearchAnuncioView, SearchRedirectView
 
 app_name = "search"
 
-from .views import (
-                        SearchProductView, 
-                    )
 urlpatterns = [
-    path('', SearchProductView.as_view(), name='query'),
+    path('products/', SearchProductView.as_view(), name='search-products'),
+    path('anuncios/', SearchAnuncioView.as_view(), name='search-anuncios'),
+    path('', SearchRedirectView.as_view(), name='query'),
 ]

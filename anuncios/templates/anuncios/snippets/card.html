@@ -1,0 +1,13 @@
+<div class="card">
+    {% if instance.imagem %}
+        <img src="{{ instance.imagem.url }}" class="card-img-top" alt="{{ instance.titulo }}">
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ instance.titulo }}</h5>
+        <p class="card-text">{{ instance.descricao }}</p>
+        <p class="card-text"><small class="text-muted">Categoria: {{ instance.categoria.titulo }}</small></p>
+        <p class="card-text"><small class="text-muted">Criado em: {{ instance.criado_em|date:"d/m/Y" }}</small></p>
+        <a href="{% url 'anuncio' anuncio_id=instance.id %}" class="btn btn-primary">Leia mais...</a>
+    </div>
+</div>
+
